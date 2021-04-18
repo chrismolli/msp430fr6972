@@ -9,6 +9,9 @@ homepage = "https://github.com/chrismolli/msp430fr6972"
 documentation = "https://github.com/chrismolli/msp430fr6972"
 repository = "https://github.com/chrismolli/msp430fr6972"
 readme = "README.md"
+exclude = [
+  "svd/*"
+]
 
 [dependencies]
 bare-metal = "0.2.0"
