@@ -1,4 +1,4 @@
-# msp430fr6972
+# msp430fr6972 ![Crates.io](https://img.shields.io/crates/v/msp430fr6972)
 Peripheral Access Crate (PAC) for TI MSP430FR6972 created using [msp430_svd](https://github.com/pftbest/msp430_svd) and [svd2rust](https://github.com/rust-embedded/svd2rust).
 
 ## Memory Layout
