@@ -15,12 +15,12 @@ exclude = [
 
 [dependencies]
 bare-metal = "0.2.0"
-msp430 = "0.2.0"
-vcell = "0.1.0"
+msp430 = "0.2.4"
+vcell = "0.1.2"
 
 [dependencies.msp430-rt]
 optional = true
-version = "0.2.0"
+version = "0.2.4"
 
 [features]
 rt = ["msp430-rt/device"]
