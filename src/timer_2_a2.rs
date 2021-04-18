@@ -2,110 +2,54 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Timer2_A2 Control"]
-    pub ta2ctl: TA2CTL,
+    pub ta2ctl: crate::Reg<ta2ctl::TA2CTL_SPEC>,
     #[doc = "0x02 - Timer2_A2 Capture/Compare Control 0"]
-    pub ta2cctl0: TA2CCTL0,
+    pub ta2cctl0: crate::Reg<ta2cctl0::TA2CCTL0_SPEC>,
     #[doc = "0x04 - Timer2_A2 Capture/Compare Control 1"]
-    pub ta2cctl1: TA2CCTL1,
+    pub ta2cctl1: crate::Reg<ta2cctl1::TA2CCTL1_SPEC>,
     _reserved3: [u8; 10usize],
     #[doc = "0x10 - Timer2_A2"]
-    pub ta2r: TA2R,
+    pub ta2r: crate::Reg<ta2r::TA2R_SPEC>,
     #[doc = "0x12 - Timer2_A2 Capture/Compare 0"]
-    pub ta2ccr0: TA2CCR0,
+    pub ta2ccr0: crate::Reg<ta2ccr0::TA2CCR0_SPEC>,
     #[doc = "0x14 - Timer2_A2 Capture/Compare 1"]
-    pub ta2ccr1: TA2CCR1,
+    pub ta2ccr1: crate::Reg<ta2ccr1::TA2CCR1_SPEC>,
     _reserved6: [u8; 10usize],
     #[doc = "0x20 - Timer2_A2 Expansion Register 0"]
-    pub ta2ex0: TA2EX0,
+    pub ta2ex0: crate::Reg<ta2ex0::TA2EX0_SPEC>,
     _reserved7: [u8; 12usize],
     #[doc = "0x2e - Timer2_A2 Interrupt Vector Word"]
-    pub ta2iv: TA2IV,
+    pub ta2iv: crate::Reg<ta2iv::TA2IV_SPEC>,
 }
-#[doc = "Timer2_A2 Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta2ctl](ta2ctl) module"]
-pub type TA2CTL = crate::Reg<u16, _TA2CTL>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TA2CTL;
-#[doc = "`read()` method returns [ta2ctl::R](ta2ctl::R) reader structure"]
-impl crate::Readable for TA2CTL {}
-#[doc = "`write(|w| ..)` method takes [ta2ctl::W](ta2ctl::W) writer structure"]
-impl crate::Writable for TA2CTL {}
+#[doc = "TA2CTL register accessor: an alias for `Reg<TA2CTL_SPEC>`"]
+pub type TA2CTL = crate::Reg<ta2ctl::TA2CTL_SPEC>;
 #[doc = "Timer2_A2 Control"]
 pub mod ta2ctl;
-#[doc = "Timer2_A2 Capture/Compare Control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta2cctl0](ta2cctl0) module"]
-pub type TA2CCTL0 = crate::Reg<u16, _TA2CCTL0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TA2CCTL0;
-#[doc = "`read()` method returns [ta2cctl0::R](ta2cctl0::R) reader structure"]
-impl crate::Readable for TA2CCTL0 {}
-#[doc = "`write(|w| ..)` method takes [ta2cctl0::W](ta2cctl0::W) writer structure"]
-impl crate::Writable for TA2CCTL0 {}
+#[doc = "TA2CCTL0 register accessor: an alias for `Reg<TA2CCTL0_SPEC>`"]
+pub type TA2CCTL0 = crate::Reg<ta2cctl0::TA2CCTL0_SPEC>;
 #[doc = "Timer2_A2 Capture/Compare Control 0"]
 pub mod ta2cctl0;
-#[doc = "Timer2_A2 Capture/Compare Control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta2cctl1](ta2cctl1) module"]
-pub type TA2CCTL1 = crate::Reg<u16, _TA2CCTL1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TA2CCTL1;
-#[doc = "`read()` method returns [ta2cctl1::R](ta2cctl1::R) reader structure"]
-impl crate::Readable for TA2CCTL1 {}
-#[doc = "`write(|w| ..)` method takes [ta2cctl1::W](ta2cctl1::W) writer structure"]
-impl crate::Writable for TA2CCTL1 {}
+#[doc = "TA2CCTL1 register accessor: an alias for `Reg<TA2CCTL1_SPEC>`"]
+pub type TA2CCTL1 = crate::Reg<ta2cctl1::TA2CCTL1_SPEC>;
 #[doc = "Timer2_A2 Capture/Compare Control 1"]
 pub mod ta2cctl1;
-#[doc = "Timer2_A2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta2r](ta2r) module"]
-pub type TA2R = crate::Reg<u16, _TA2R>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TA2R;
-#[doc = "`read()` method returns [ta2r::R](ta2r::R) reader structure"]
-impl crate::Readable for TA2R {}
-#[doc = "`write(|w| ..)` method takes [ta2r::W](ta2r::W) writer structure"]
-impl crate::Writable for TA2R {}
+#[doc = "TA2R register accessor: an alias for `Reg<TA2R_SPEC>`"]
+pub type TA2R = crate::Reg<ta2r::TA2R_SPEC>;
 #[doc = "Timer2_A2"]
 pub mod ta2r;
-#[doc = "Timer2_A2 Capture/Compare 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta2ccr0](ta2ccr0) module"]
-pub type TA2CCR0 = crate::Reg<u16, _TA2CCR0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TA2CCR0;
-#[doc = "`read()` method returns [ta2ccr0::R](ta2ccr0::R) reader structure"]
-impl crate::Readable for TA2CCR0 {}
-#[doc = "`write(|w| ..)` method takes [ta2ccr0::W](ta2ccr0::W) writer structure"]
-impl crate::Writable for TA2CCR0 {}
+#[doc = "TA2CCR0 register accessor: an alias for `Reg<TA2CCR0_SPEC>`"]
+pub type TA2CCR0 = crate::Reg<ta2ccr0::TA2CCR0_SPEC>;
 #[doc = "Timer2_A2 Capture/Compare 0"]
 pub mod ta2ccr0;
-#[doc = "Timer2_A2 Capture/Compare 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta2ccr1](ta2ccr1) module"]
-pub type TA2CCR1 = crate::Reg<u16, _TA2CCR1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TA2CCR1;
-#[doc = "`read()` method returns [ta2ccr1::R](ta2ccr1::R) reader structure"]
-impl crate::Readable for TA2CCR1 {}
-#[doc = "`write(|w| ..)` method takes [ta2ccr1::W](ta2ccr1::W) writer structure"]
-impl crate::Writable for TA2CCR1 {}
+#[doc = "TA2CCR1 register accessor: an alias for `Reg<TA2CCR1_SPEC>`"]
+pub type TA2CCR1 = crate::Reg<ta2ccr1::TA2CCR1_SPEC>;
 #[doc = "Timer2_A2 Capture/Compare 1"]
 pub mod ta2ccr1;
-#[doc = "Timer2_A2 Expansion Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta2ex0](ta2ex0) module"]
-pub type TA2EX0 = crate::Reg<u16, _TA2EX0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TA2EX0;
-#[doc = "`read()` method returns [ta2ex0::R](ta2ex0::R) reader structure"]
-impl crate::Readable for TA2EX0 {}
-#[doc = "`write(|w| ..)` method takes [ta2ex0::W](ta2ex0::W) writer structure"]
-impl crate::Writable for TA2EX0 {}
+#[doc = "TA2EX0 register accessor: an alias for `Reg<TA2EX0_SPEC>`"]
+pub type TA2EX0 = crate::Reg<ta2ex0::TA2EX0_SPEC>;
 #[doc = "Timer2_A2 Expansion Register 0"]
 pub mod ta2ex0;
-#[doc = "Timer2_A2 Interrupt Vector Word\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta2iv](ta2iv) module"]
-pub type TA2IV = crate::Reg<u16, _TA2IV>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TA2IV;
-#[doc = "`read()` method returns [ta2iv::R](ta2iv::R) reader structure"]
-impl crate::Readable for TA2IV {}
-#[doc = "`write(|w| ..)` method takes [ta2iv::W](ta2iv::W) writer structure"]
-impl crate::Writable for TA2IV {}
+#[doc = "TA2IV register accessor: an alias for `Reg<TA2IV_SPEC>`"]
+pub type TA2IV = crate::Reg<ta2iv::TA2IV_SPEC>;
 #[doc = "Timer2_A2 Interrupt Vector Word"]
 pub mod ta2iv;

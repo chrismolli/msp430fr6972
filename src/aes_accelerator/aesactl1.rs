@@ -1,18 +1,52 @@
-#[doc = "Reader of register AESACTL1"]
-pub type R = crate::R<u16, super::AESACTL1>;
-#[doc = "Writer for register AESACTL1"]
-pub type W = crate::W<u16, super::AESACTL1>;
-#[doc = "Register AESACTL1 `reset()`'s with value 0"]
-impl crate::ResetValue for super::AESACTL1 {
-    type Type = u16;
+#[doc = "Register `AESACTL1` reader"]
+pub struct R(crate::R<AESACTL1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<AESACTL1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `AESBLKCNT0`"]
-pub type AESBLKCNT0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `AESBLKCNT0`"]
+impl core::convert::From<crate::R<AESACTL1_SPEC>> for R {
+    fn from(reader: crate::R<AESACTL1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `AESACTL1` writer"]
+pub struct W(crate::W<AESACTL1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<AESACTL1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<AESACTL1_SPEC>> for W {
+    fn from(writer: crate::W<AESACTL1_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `AESBLKCNT0` reader - AES Cipher Block Counter Bit: 0"]
+pub struct AESBLKCNT0_R(crate::FieldReader<bool, bool>);
+impl AESBLKCNT0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AESBLKCNT0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AESBLKCNT0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESBLKCNT0` writer - AES Cipher Block Counter Bit: 0"]
 pub struct AESBLKCNT0_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> AESBLKCNT0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `AESBLKCNT1`"]
-pub type AESBLKCNT1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `AESBLKCNT1`"]
+#[doc = "Field `AESBLKCNT1` reader - AES Cipher Block Counter Bit: 1"]
+pub struct AESBLKCNT1_R(crate::FieldReader<bool, bool>);
+impl AESBLKCNT1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AESBLKCNT1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AESBLKCNT1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESBLKCNT1` writer - AES Cipher Block Counter Bit: 1"]
 pub struct AESBLKCNT1_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +100,25 @@ impl<'a> AESBLKCNT1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `AESBLKCNT2`"]
-pub type AESBLKCNT2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `AESBLKCNT2`"]
+#[doc = "Field `AESBLKCNT2` reader - AES Cipher Block Counter Bit: 2"]
+pub struct AESBLKCNT2_R(crate::FieldReader<bool, bool>);
+impl AESBLKCNT2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AESBLKCNT2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AESBLKCNT2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESBLKCNT2` writer - AES Cipher Block Counter Bit: 2"]
 pub struct AESBLKCNT2_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +136,25 @@ impl<'a> AESBLKCNT2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u16 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `AESBLKCNT3`"]
-pub type AESBLKCNT3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `AESBLKCNT3`"]
+#[doc = "Field `AESBLKCNT3` reader - AES Cipher Block Counter Bit: 3"]
+pub struct AESBLKCNT3_R(crate::FieldReader<bool, bool>);
+impl AESBLKCNT3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AESBLKCNT3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AESBLKCNT3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESBLKCNT3` writer - AES Cipher Block Counter Bit: 3"]
 pub struct AESBLKCNT3_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +172,25 @@ impl<'a> AESBLKCNT3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `AESBLKCNT4`"]
-pub type AESBLKCNT4_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `AESBLKCNT4`"]
+#[doc = "Field `AESBLKCNT4` reader - AES Cipher Block Counter Bit: 4"]
+pub struct AESBLKCNT4_R(crate::FieldReader<bool, bool>);
+impl AESBLKCNT4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AESBLKCNT4_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AESBLKCNT4_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESBLKCNT4` writer - AES Cipher Block Counter Bit: 4"]
 pub struct AESBLKCNT4_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +208,25 @@ impl<'a> AESBLKCNT4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u16 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `AESBLKCNT5`"]
-pub type AESBLKCNT5_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `AESBLKCNT5`"]
+#[doc = "Field `AESBLKCNT5` reader - AES Cipher Block Counter Bit: 5"]
+pub struct AESBLKCNT5_R(crate::FieldReader<bool, bool>);
+impl AESBLKCNT5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AESBLKCNT5_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AESBLKCNT5_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESBLKCNT5` writer - AES Cipher Block Counter Bit: 5"]
 pub struct AESBLKCNT5_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +244,25 @@ impl<'a> AESBLKCNT5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u16 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `AESBLKCNT6`"]
-pub type AESBLKCNT6_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `AESBLKCNT6`"]
+#[doc = "Field `AESBLKCNT6` reader - AES Cipher Block Counter Bit: 6"]
+pub struct AESBLKCNT6_R(crate::FieldReader<bool, bool>);
+impl AESBLKCNT6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AESBLKCNT6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AESBLKCNT6_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESBLKCNT6` writer - AES Cipher Block Counter Bit: 6"]
 pub struct AESBLKCNT6_W<'a> {
     w: &'a mut W,
 }
@@ -174,13 +280,25 @@ impl<'a> AESBLKCNT6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u16 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `AESBLKCNT7`"]
-pub type AESBLKCNT7_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `AESBLKCNT7`"]
+#[doc = "Field `AESBLKCNT7` reader - AES Cipher Block Counter Bit: 7"]
+pub struct AESBLKCNT7_R(crate::FieldReader<bool, bool>);
+impl AESBLKCNT7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AESBLKCNT7_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AESBLKCNT7_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESBLKCNT7` writer - AES Cipher Block Counter Bit: 7"]
 pub struct AESBLKCNT7_W<'a> {
     w: &'a mut W,
 }
@@ -198,7 +316,7 @@ impl<'a> AESBLKCNT7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
         self.w
     }
 }
@@ -284,5 +402,30 @@ impl W {
     #[inline(always)]
     pub fn aesblkcnt7(&mut self) -> AESBLKCNT7_W {
         AESBLKCNT7_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "AES accelerator control register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [aesactl1](index.html) module"]
+pub struct AESACTL1_SPEC;
+impl crate::RegisterSpec for AESACTL1_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [aesactl1::R](R) reader structure"]
+impl crate::Readable for AESACTL1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [aesactl1::W](W) writer structure"]
+impl crate::Writable for AESACTL1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets AESACTL1 to value 0"]
+impl crate::Resettable for AESACTL1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

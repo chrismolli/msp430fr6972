@@ -1,18 +1,52 @@
-#[doc = "Reader of register UCB1IFG_I2C"]
-pub type R = crate::R<u16, super::UCB1IFG_I2C>;
-#[doc = "Writer for register UCB1IFG_I2C"]
-pub type W = crate::W<u16, super::UCB1IFG_I2C>;
-#[doc = "Register UCB1IFG_I2C `reset()`'s with value 0"]
-impl crate::ResetValue for super::UCB1IFG_I2C {
-    type Type = u16;
+#[doc = "Register `UCB1IFG_I2C` reader"]
+pub struct R(crate::R<UCB1IFG_I2C_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<UCB1IFG_I2C_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `UCRXIFG0`"]
-pub type UCRXIFG0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCRXIFG0`"]
+impl core::convert::From<crate::R<UCB1IFG_I2C_SPEC>> for R {
+    fn from(reader: crate::R<UCB1IFG_I2C_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `UCB1IFG_I2C` writer"]
+pub struct W(crate::W<UCB1IFG_I2C_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<UCB1IFG_I2C_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<UCB1IFG_I2C_SPEC>> for W {
+    fn from(writer: crate::W<UCB1IFG_I2C_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `UCRXIFG0` reader - I2C Receive Interrupt Flag 0"]
+pub struct UCRXIFG0_R(crate::FieldReader<bool, bool>);
+impl UCRXIFG0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCRXIFG0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCRXIFG0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCRXIFG0` writer - I2C Receive Interrupt Flag 0"]
 pub struct UCRXIFG0_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> UCRXIFG0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `UCTXIFG0`"]
-pub type UCTXIFG0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCTXIFG0`"]
+#[doc = "Field `UCTXIFG0` reader - I2C Transmit Interrupt Flag 0"]
+pub struct UCTXIFG0_R(crate::FieldReader<bool, bool>);
+impl UCTXIFG0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCTXIFG0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCTXIFG0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCTXIFG0` writer - I2C Transmit Interrupt Flag 0"]
 pub struct UCTXIFG0_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +100,25 @@ impl<'a> UCTXIFG0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `UCSTTIFG`"]
-pub type UCSTTIFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCSTTIFG`"]
+#[doc = "Field `UCSTTIFG` reader - I2C START Condition interrupt Flag"]
+pub struct UCSTTIFG_R(crate::FieldReader<bool, bool>);
+impl UCSTTIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCSTTIFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCSTTIFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCSTTIFG` writer - I2C START Condition interrupt Flag"]
 pub struct UCSTTIFG_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +136,25 @@ impl<'a> UCSTTIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u16 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `UCSTPIFG`"]
-pub type UCSTPIFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCSTPIFG`"]
+#[doc = "Field `UCSTPIFG` reader - I2C STOP Condition interrupt Flag"]
+pub struct UCSTPIFG_R(crate::FieldReader<bool, bool>);
+impl UCSTPIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCSTPIFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCSTPIFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCSTPIFG` writer - I2C STOP Condition interrupt Flag"]
 pub struct UCSTPIFG_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +172,25 @@ impl<'a> UCSTPIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `UCALIFG`"]
-pub type UCALIFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCALIFG`"]
+#[doc = "Field `UCALIFG` reader - I2C Arbitration Lost interrupt Flag"]
+pub struct UCALIFG_R(crate::FieldReader<bool, bool>);
+impl UCALIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCALIFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCALIFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCALIFG` writer - I2C Arbitration Lost interrupt Flag"]
 pub struct UCALIFG_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +208,25 @@ impl<'a> UCALIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u16 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `UCNACKIFG`"]
-pub type UCNACKIFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCNACKIFG`"]
+#[doc = "Field `UCNACKIFG` reader - I2C NACK Condition interrupt Flag"]
+pub struct UCNACKIFG_R(crate::FieldReader<bool, bool>);
+impl UCNACKIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCNACKIFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCNACKIFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCNACKIFG` writer - I2C NACK Condition interrupt Flag"]
 pub struct UCNACKIFG_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +244,25 @@ impl<'a> UCNACKIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u16 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `UCBCNTIFG`"]
-pub type UCBCNTIFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCBCNTIFG`"]
+#[doc = "Field `UCBCNTIFG` reader - I2C Byte counter interrupt flag"]
+pub struct UCBCNTIFG_R(crate::FieldReader<bool, bool>);
+impl UCBCNTIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCBCNTIFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCBCNTIFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCBCNTIFG` writer - I2C Byte counter interrupt flag"]
 pub struct UCBCNTIFG_W<'a> {
     w: &'a mut W,
 }
@@ -174,13 +280,25 @@ impl<'a> UCBCNTIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u16 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `UCCLTOIFG`"]
-pub type UCCLTOIFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCCLTOIFG`"]
+#[doc = "Field `UCCLTOIFG` reader - I2C Clock low Timeout interrupt Flag"]
+pub struct UCCLTOIFG_R(crate::FieldReader<bool, bool>);
+impl UCCLTOIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCCLTOIFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCCLTOIFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCCLTOIFG` writer - I2C Clock low Timeout interrupt Flag"]
 pub struct UCCLTOIFG_W<'a> {
     w: &'a mut W,
 }
@@ -198,13 +316,25 @@ impl<'a> UCCLTOIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Reader of field `UCRXIFG1`"]
-pub type UCRXIFG1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCRXIFG1`"]
+#[doc = "Field `UCRXIFG1` reader - I2C Receive Interrupt Flag 1"]
+pub struct UCRXIFG1_R(crate::FieldReader<bool, bool>);
+impl UCRXIFG1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCRXIFG1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCRXIFG1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCRXIFG1` writer - I2C Receive Interrupt Flag 1"]
 pub struct UCRXIFG1_W<'a> {
     w: &'a mut W,
 }
@@ -222,13 +352,25 @@ impl<'a> UCRXIFG1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u16) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u16 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `UCTXIFG1`"]
-pub type UCTXIFG1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCTXIFG1`"]
+#[doc = "Field `UCTXIFG1` reader - I2C Transmit Interrupt Flag 1"]
+pub struct UCTXIFG1_R(crate::FieldReader<bool, bool>);
+impl UCTXIFG1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCTXIFG1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCTXIFG1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCTXIFG1` writer - I2C Transmit Interrupt Flag 1"]
 pub struct UCTXIFG1_W<'a> {
     w: &'a mut W,
 }
@@ -246,13 +388,25 @@ impl<'a> UCTXIFG1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u16) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u16 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `UCRXIFG2`"]
-pub type UCRXIFG2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCRXIFG2`"]
+#[doc = "Field `UCRXIFG2` reader - I2C Receive Interrupt Flag 2"]
+pub struct UCRXIFG2_R(crate::FieldReader<bool, bool>);
+impl UCRXIFG2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCRXIFG2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCRXIFG2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCRXIFG2` writer - I2C Receive Interrupt Flag 2"]
 pub struct UCRXIFG2_W<'a> {
     w: &'a mut W,
 }
@@ -270,13 +424,25 @@ impl<'a> UCRXIFG2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u16) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u16 & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `UCTXIFG2`"]
-pub type UCTXIFG2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCTXIFG2`"]
+#[doc = "Field `UCTXIFG2` reader - I2C Transmit Interrupt Flag 2"]
+pub struct UCTXIFG2_R(crate::FieldReader<bool, bool>);
+impl UCTXIFG2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCTXIFG2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCTXIFG2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCTXIFG2` writer - I2C Transmit Interrupt Flag 2"]
 pub struct UCTXIFG2_W<'a> {
     w: &'a mut W,
 }
@@ -294,13 +460,25 @@ impl<'a> UCTXIFG2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u16) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u16 & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Reader of field `UCRXIFG3`"]
-pub type UCRXIFG3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCRXIFG3`"]
+#[doc = "Field `UCRXIFG3` reader - I2C Receive Interrupt Flag 3"]
+pub struct UCRXIFG3_R(crate::FieldReader<bool, bool>);
+impl UCRXIFG3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCRXIFG3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCRXIFG3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCRXIFG3` writer - I2C Receive Interrupt Flag 3"]
 pub struct UCRXIFG3_W<'a> {
     w: &'a mut W,
 }
@@ -318,13 +496,25 @@ impl<'a> UCRXIFG3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u16) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u16 & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `UCTXIFG3`"]
-pub type UCTXIFG3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCTXIFG3`"]
+#[doc = "Field `UCTXIFG3` reader - I2C Transmit Interrupt Flag 3"]
+pub struct UCTXIFG3_R(crate::FieldReader<bool, bool>);
+impl UCTXIFG3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCTXIFG3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCTXIFG3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCTXIFG3` writer - I2C Transmit Interrupt Flag 3"]
 pub struct UCTXIFG3_W<'a> {
     w: &'a mut W,
 }
@@ -342,13 +532,25 @@ impl<'a> UCTXIFG3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u16) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u16 & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Reader of field `UCBIT9IFG`"]
-pub type UCBIT9IFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCBIT9IFG`"]
+#[doc = "Field `UCBIT9IFG` reader - I2C Bit 9 Possition Interrupt Flag 3"]
+pub struct UCBIT9IFG_R(crate::FieldReader<bool, bool>);
+impl UCBIT9IFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCBIT9IFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCBIT9IFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCBIT9IFG` writer - I2C Bit 9 Possition Interrupt Flag 3"]
 pub struct UCBIT9IFG_W<'a> {
     w: &'a mut W,
 }
@@ -366,7 +568,7 @@ impl<'a> UCBIT9IFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u16) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u16 & 0x01) << 14);
         self.w
     }
 }
@@ -522,5 +724,30 @@ impl W {
     #[inline(always)]
     pub fn ucbit9ifg(&mut self) -> UCBIT9IFG_W {
         UCBIT9IFG_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "USCI B1 Interrupt Flags Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucb1ifg_i2c](index.html) module"]
+pub struct UCB1IFG_I2C_SPEC;
+impl crate::RegisterSpec for UCB1IFG_I2C_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [ucb1ifg_i2c::R](R) reader structure"]
+impl crate::Readable for UCB1IFG_I2C_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ucb1ifg_i2c::W](W) writer structure"]
+impl crate::Writable for UCB1IFG_I2C_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets UCB1IFG_I2C to value 0"]
+impl crate::Resettable for UCB1IFG_I2C_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

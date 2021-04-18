@@ -1,13 +1,35 @@
-#[doc = "Reader of register LCDCBLKCTL"]
-pub type R = crate::R<u16, super::LCDCBLKCTL>;
-#[doc = "Writer for register LCDCBLKCTL"]
-pub type W = crate::W<u16, super::LCDCBLKCTL>;
-#[doc = "Register LCDCBLKCTL `reset()`'s with value 0"]
-impl crate::ResetValue for super::LCDCBLKCTL {
-    type Type = u16;
+#[doc = "Register `LCDCBLKCTL` reader"]
+pub struct R(crate::R<LCDCBLKCTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<LCDCBLKCTL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<LCDCBLKCTL_SPEC>> for R {
+    fn from(reader: crate::R<LCDCBLKCTL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `LCDCBLKCTL` writer"]
+pub struct W(crate::W<LCDCBLKCTL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<LCDCBLKCTL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<LCDCBLKCTL_SPEC>> for W {
+    fn from(writer: crate::W<LCDCBLKCTL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "LCD_C Blinking mode Bit: 0\n\nValue on reset: 0"]
@@ -29,9 +51,12 @@ impl From<LCDBLKMOD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `LCDBLKMOD`"]
-pub type LCDBLKMOD_R = crate::R<u8, LCDBLKMOD_A>;
+#[doc = "Field `LCDBLKMOD` reader - LCD_C Blinking mode Bit: 0"]
+pub struct LCDBLKMOD_R(crate::FieldReader<u8, LCDBLKMOD_A>);
 impl LCDBLKMOD_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LCDBLKMOD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LCDBLKMOD_A {
@@ -46,25 +71,32 @@ impl LCDBLKMOD_R {
     #[doc = "Checks if the value of the field is `LCDBLKMOD_0`"]
     #[inline(always)]
     pub fn is_lcdblkmod_0(&self) -> bool {
-        *self == LCDBLKMOD_A::LCDBLKMOD_0
+        **self == LCDBLKMOD_A::LCDBLKMOD_0
     }
     #[doc = "Checks if the value of the field is `LCDBLKMOD_1`"]
     #[inline(always)]
     pub fn is_lcdblkmod_1(&self) -> bool {
-        *self == LCDBLKMOD_A::LCDBLKMOD_1
+        **self == LCDBLKMOD_A::LCDBLKMOD_1
     }
     #[doc = "Checks if the value of the field is `LCDBLKMOD_2`"]
     #[inline(always)]
     pub fn is_lcdblkmod_2(&self) -> bool {
-        *self == LCDBLKMOD_A::LCDBLKMOD_2
+        **self == LCDBLKMOD_A::LCDBLKMOD_2
     }
     #[doc = "Checks if the value of the field is `LCDBLKMOD_3`"]
     #[inline(always)]
     pub fn is_lcdblkmod_3(&self) -> bool {
-        *self == LCDBLKMOD_A::LCDBLKMOD_3
+        **self == LCDBLKMOD_A::LCDBLKMOD_3
     }
 }
-#[doc = "Write proxy for field `LCDBLKMOD`"]
+impl core::ops::Deref for LCDBLKMOD_R {
+    type Target = crate::FieldReader<u8, LCDBLKMOD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LCDBLKMOD` writer - LCD_C Blinking mode Bit: 0"]
 pub struct LCDBLKMOD_W<'a> {
     w: &'a mut W,
 }
@@ -72,9 +104,7 @@ impl<'a> LCDBLKMOD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LCDBLKMOD_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "LCD_C Blinking mode: Off"]
     #[inline(always)]
@@ -99,7 +129,7 @@ impl<'a> LCDBLKMOD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u16) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u16 & 0x03);
         self.w
     }
 }
@@ -130,9 +160,12 @@ impl From<LCDBLKPRE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `LCDBLKPRE`"]
-pub type LCDBLKPRE_R = crate::R<u8, LCDBLKPRE_A>;
+#[doc = "Field `LCDBLKPRE` reader - LCD_C Clock pre-scaler for blinking frequency Bit: 0"]
+pub struct LCDBLKPRE_R(crate::FieldReader<u8, LCDBLKPRE_A>);
 impl LCDBLKPRE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LCDBLKPRE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LCDBLKPRE_A {
@@ -151,45 +184,52 @@ impl LCDBLKPRE_R {
     #[doc = "Checks if the value of the field is `LCDBLKPRE_0`"]
     #[inline(always)]
     pub fn is_lcdblkpre_0(&self) -> bool {
-        *self == LCDBLKPRE_A::LCDBLKPRE_0
+        **self == LCDBLKPRE_A::LCDBLKPRE_0
     }
     #[doc = "Checks if the value of the field is `LCDBLKPRE_1`"]
     #[inline(always)]
     pub fn is_lcdblkpre_1(&self) -> bool {
-        *self == LCDBLKPRE_A::LCDBLKPRE_1
+        **self == LCDBLKPRE_A::LCDBLKPRE_1
     }
     #[doc = "Checks if the value of the field is `LCDBLKPRE_2`"]
     #[inline(always)]
     pub fn is_lcdblkpre_2(&self) -> bool {
-        *self == LCDBLKPRE_A::LCDBLKPRE_2
+        **self == LCDBLKPRE_A::LCDBLKPRE_2
     }
     #[doc = "Checks if the value of the field is `LCDBLKPRE_3`"]
     #[inline(always)]
     pub fn is_lcdblkpre_3(&self) -> bool {
-        *self == LCDBLKPRE_A::LCDBLKPRE_3
+        **self == LCDBLKPRE_A::LCDBLKPRE_3
     }
     #[doc = "Checks if the value of the field is `LCDBLKPRE_4`"]
     #[inline(always)]
     pub fn is_lcdblkpre_4(&self) -> bool {
-        *self == LCDBLKPRE_A::LCDBLKPRE_4
+        **self == LCDBLKPRE_A::LCDBLKPRE_4
     }
     #[doc = "Checks if the value of the field is `LCDBLKPRE_5`"]
     #[inline(always)]
     pub fn is_lcdblkpre_5(&self) -> bool {
-        *self == LCDBLKPRE_A::LCDBLKPRE_5
+        **self == LCDBLKPRE_A::LCDBLKPRE_5
     }
     #[doc = "Checks if the value of the field is `LCDBLKPRE_6`"]
     #[inline(always)]
     pub fn is_lcdblkpre_6(&self) -> bool {
-        *self == LCDBLKPRE_A::LCDBLKPRE_6
+        **self == LCDBLKPRE_A::LCDBLKPRE_6
     }
     #[doc = "Checks if the value of the field is `LCDBLKPRE_7`"]
     #[inline(always)]
     pub fn is_lcdblkpre_7(&self) -> bool {
-        *self == LCDBLKPRE_A::LCDBLKPRE_7
+        **self == LCDBLKPRE_A::LCDBLKPRE_7
     }
 }
-#[doc = "Write proxy for field `LCDBLKPRE`"]
+impl core::ops::Deref for LCDBLKPRE_R {
+    type Target = crate::FieldReader<u8, LCDBLKPRE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LCDBLKPRE` writer - LCD_C Clock pre-scaler for blinking frequency Bit: 0"]
 pub struct LCDBLKPRE_W<'a> {
     w: &'a mut W,
 }
@@ -197,9 +237,7 @@ impl<'a> LCDBLKPRE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LCDBLKPRE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "LCD_C Clock pre-scaler for blinking frequency: 0"]
     #[inline(always)]
@@ -244,7 +282,7 @@ impl<'a> LCDBLKPRE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 2)) | (((value as u16) & 0x07) << 2);
+        self.w.bits = (self.w.bits & !(0x07 << 2)) | ((value as u16 & 0x07) << 2);
         self.w
     }
 }
@@ -275,9 +313,12 @@ impl From<LCDBLKDIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `LCDBLKDIV`"]
-pub type LCDBLKDIV_R = crate::R<u8, LCDBLKDIV_A>;
+#[doc = "Field `LCDBLKDIV` reader - LCD_C Clock divider for blinking frequency Bit: 0"]
+pub struct LCDBLKDIV_R(crate::FieldReader<u8, LCDBLKDIV_A>);
 impl LCDBLKDIV_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LCDBLKDIV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LCDBLKDIV_A {
@@ -296,45 +337,52 @@ impl LCDBLKDIV_R {
     #[doc = "Checks if the value of the field is `LCDBLKDIV_0`"]
     #[inline(always)]
     pub fn is_lcdblkdiv_0(&self) -> bool {
-        *self == LCDBLKDIV_A::LCDBLKDIV_0
+        **self == LCDBLKDIV_A::LCDBLKDIV_0
     }
     #[doc = "Checks if the value of the field is `LCDBLKDIV_1`"]
     #[inline(always)]
     pub fn is_lcdblkdiv_1(&self) -> bool {
-        *self == LCDBLKDIV_A::LCDBLKDIV_1
+        **self == LCDBLKDIV_A::LCDBLKDIV_1
     }
     #[doc = "Checks if the value of the field is `LCDBLKDIV_2`"]
     #[inline(always)]
     pub fn is_lcdblkdiv_2(&self) -> bool {
-        *self == LCDBLKDIV_A::LCDBLKDIV_2
+        **self == LCDBLKDIV_A::LCDBLKDIV_2
     }
     #[doc = "Checks if the value of the field is `LCDBLKDIV_3`"]
     #[inline(always)]
     pub fn is_lcdblkdiv_3(&self) -> bool {
-        *self == LCDBLKDIV_A::LCDBLKDIV_3
+        **self == LCDBLKDIV_A::LCDBLKDIV_3
     }
     #[doc = "Checks if the value of the field is `LCDBLKDIV_4`"]
     #[inline(always)]
     pub fn is_lcdblkdiv_4(&self) -> bool {
-        *self == LCDBLKDIV_A::LCDBLKDIV_4
+        **self == LCDBLKDIV_A::LCDBLKDIV_4
     }
     #[doc = "Checks if the value of the field is `LCDBLKDIV_5`"]
     #[inline(always)]
     pub fn is_lcdblkdiv_5(&self) -> bool {
-        *self == LCDBLKDIV_A::LCDBLKDIV_5
+        **self == LCDBLKDIV_A::LCDBLKDIV_5
     }
     #[doc = "Checks if the value of the field is `LCDBLKDIV_6`"]
     #[inline(always)]
     pub fn is_lcdblkdiv_6(&self) -> bool {
-        *self == LCDBLKDIV_A::LCDBLKDIV_6
+        **self == LCDBLKDIV_A::LCDBLKDIV_6
     }
     #[doc = "Checks if the value of the field is `LCDBLKDIV_7`"]
     #[inline(always)]
     pub fn is_lcdblkdiv_7(&self) -> bool {
-        *self == LCDBLKDIV_A::LCDBLKDIV_7
+        **self == LCDBLKDIV_A::LCDBLKDIV_7
     }
 }
-#[doc = "Write proxy for field `LCDBLKDIV`"]
+impl core::ops::Deref for LCDBLKDIV_R {
+    type Target = crate::FieldReader<u8, LCDBLKDIV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LCDBLKDIV` writer - LCD_C Clock divider for blinking frequency Bit: 0"]
 pub struct LCDBLKDIV_W<'a> {
     w: &'a mut W,
 }
@@ -342,9 +390,7 @@ impl<'a> LCDBLKDIV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LCDBLKDIV_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "LCD_C Clock divider for blinking frequency: 0"]
     #[inline(always)]
@@ -389,7 +435,7 @@ impl<'a> LCDBLKDIV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 5)) | (((value as u16) & 0x07) << 5);
+        self.w.bits = (self.w.bits & !(0x07 << 5)) | ((value as u16 & 0x07) << 5);
         self.w
     }
 }
@@ -425,5 +471,30 @@ impl W {
     #[inline(always)]
     pub fn lcdblkdiv(&mut self) -> LCDBLKDIV_W {
         LCDBLKDIV_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "LCD_C blinking control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lcdcblkctl](index.html) module"]
+pub struct LCDCBLKCTL_SPEC;
+impl crate::RegisterSpec for LCDCBLKCTL_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [lcdcblkctl::R](R) reader structure"]
+impl crate::Readable for LCDCBLKCTL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [lcdcblkctl::W](W) writer structure"]
+impl crate::Writable for LCDCBLKCTL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets LCDCBLKCTL to value 0"]
+impl crate::Resettable for LCDCBLKCTL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

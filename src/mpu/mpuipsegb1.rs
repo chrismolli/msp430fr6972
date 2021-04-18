@@ -1,18 +1,52 @@
-#[doc = "Reader of register MPUIPSEGB1"]
-pub type R = crate::R<u16, super::MPUIPSEGB1>;
-#[doc = "Writer for register MPUIPSEGB1"]
-pub type W = crate::W<u16, super::MPUIPSEGB1>;
-#[doc = "Register MPUIPSEGB1 `reset()`'s with value 0"]
-impl crate::ResetValue for super::MPUIPSEGB1 {
-    type Type = u16;
+#[doc = "Register `MPUIPSEGB1` reader"]
+pub struct R(crate::R<MPUIPSEGB1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MPUIPSEGB1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `MPUIPSEGB10`"]
-pub type MPUIPSEGB10_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUIPSEGB10`"]
+impl core::convert::From<crate::R<MPUIPSEGB1_SPEC>> for R {
+    fn from(reader: crate::R<MPUIPSEGB1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `MPUIPSEGB1` writer"]
+pub struct W(crate::W<MPUIPSEGB1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MPUIPSEGB1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<MPUIPSEGB1_SPEC>> for W {
+    fn from(writer: crate::W<MPUIPSEGB1_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `MPUIPSEGB10` reader - MPU IP Segment Border 1 Bit: 0"]
+pub struct MPUIPSEGB10_R(crate::FieldReader<bool, bool>);
+impl MPUIPSEGB10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUIPSEGB10_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUIPSEGB10_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUIPSEGB10` writer - MPU IP Segment Border 1 Bit: 0"]
 pub struct MPUIPSEGB10_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> MPUIPSEGB10_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `MPUIPSEGB11`"]
-pub type MPUIPSEGB11_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUIPSEGB11`"]
+#[doc = "Field `MPUIPSEGB11` reader - MPU IP Segment Border 1 Bit: 1"]
+pub struct MPUIPSEGB11_R(crate::FieldReader<bool, bool>);
+impl MPUIPSEGB11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUIPSEGB11_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUIPSEGB11_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUIPSEGB11` writer - MPU IP Segment Border 1 Bit: 1"]
 pub struct MPUIPSEGB11_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +100,25 @@ impl<'a> MPUIPSEGB11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `MPUIPSEGB12`"]
-pub type MPUIPSEGB12_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUIPSEGB12`"]
+#[doc = "Field `MPUIPSEGB12` reader - MPU IP Segment Border 1 Bit: 2"]
+pub struct MPUIPSEGB12_R(crate::FieldReader<bool, bool>);
+impl MPUIPSEGB12_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUIPSEGB12_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUIPSEGB12_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUIPSEGB12` writer - MPU IP Segment Border 1 Bit: 2"]
 pub struct MPUIPSEGB12_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +136,25 @@ impl<'a> MPUIPSEGB12_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u16 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `MPUIPSEGB13`"]
-pub type MPUIPSEGB13_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUIPSEGB13`"]
+#[doc = "Field `MPUIPSEGB13` reader - MPU IP Segment Border 1 Bit: 3"]
+pub struct MPUIPSEGB13_R(crate::FieldReader<bool, bool>);
+impl MPUIPSEGB13_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUIPSEGB13_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUIPSEGB13_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUIPSEGB13` writer - MPU IP Segment Border 1 Bit: 3"]
 pub struct MPUIPSEGB13_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +172,25 @@ impl<'a> MPUIPSEGB13_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `MPUIPSEGB14`"]
-pub type MPUIPSEGB14_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUIPSEGB14`"]
+#[doc = "Field `MPUIPSEGB14` reader - MPU IP Segment Border 1 Bit: 4"]
+pub struct MPUIPSEGB14_R(crate::FieldReader<bool, bool>);
+impl MPUIPSEGB14_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUIPSEGB14_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUIPSEGB14_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUIPSEGB14` writer - MPU IP Segment Border 1 Bit: 4"]
 pub struct MPUIPSEGB14_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +208,25 @@ impl<'a> MPUIPSEGB14_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u16 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `MPUIPSEGB15`"]
-pub type MPUIPSEGB15_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUIPSEGB15`"]
+#[doc = "Field `MPUIPSEGB15` reader - MPU IP Segment Border 1 Bit: 5"]
+pub struct MPUIPSEGB15_R(crate::FieldReader<bool, bool>);
+impl MPUIPSEGB15_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUIPSEGB15_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUIPSEGB15_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUIPSEGB15` writer - MPU IP Segment Border 1 Bit: 5"]
 pub struct MPUIPSEGB15_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +244,25 @@ impl<'a> MPUIPSEGB15_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u16 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `MPUIPSEGB16`"]
-pub type MPUIPSEGB16_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUIPSEGB16`"]
+#[doc = "Field `MPUIPSEGB16` reader - MPU IP Segment Border 1 Bit: 6"]
+pub struct MPUIPSEGB16_R(crate::FieldReader<bool, bool>);
+impl MPUIPSEGB16_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUIPSEGB16_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUIPSEGB16_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUIPSEGB16` writer - MPU IP Segment Border 1 Bit: 6"]
 pub struct MPUIPSEGB16_W<'a> {
     w: &'a mut W,
 }
@@ -174,13 +280,25 @@ impl<'a> MPUIPSEGB16_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u16 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `MPUIPSEGB17`"]
-pub type MPUIPSEGB17_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUIPSEGB17`"]
+#[doc = "Field `MPUIPSEGB17` reader - MPU IP Segment Border 1 Bit: 7"]
+pub struct MPUIPSEGB17_R(crate::FieldReader<bool, bool>);
+impl MPUIPSEGB17_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUIPSEGB17_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUIPSEGB17_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUIPSEGB17` writer - MPU IP Segment Border 1 Bit: 7"]
 pub struct MPUIPSEGB17_W<'a> {
     w: &'a mut W,
 }
@@ -198,13 +316,25 @@ impl<'a> MPUIPSEGB17_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Reader of field `MPUIPSEGB18`"]
-pub type MPUIPSEGB18_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUIPSEGB18`"]
+#[doc = "Field `MPUIPSEGB18` reader - MPU IP Segment Border 1 Bit: 8"]
+pub struct MPUIPSEGB18_R(crate::FieldReader<bool, bool>);
+impl MPUIPSEGB18_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUIPSEGB18_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUIPSEGB18_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUIPSEGB18` writer - MPU IP Segment Border 1 Bit: 8"]
 pub struct MPUIPSEGB18_W<'a> {
     w: &'a mut W,
 }
@@ -222,13 +352,25 @@ impl<'a> MPUIPSEGB18_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u16) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u16 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `MPUIPSEGB19`"]
-pub type MPUIPSEGB19_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUIPSEGB19`"]
+#[doc = "Field `MPUIPSEGB19` reader - MPU IP Segment Border 1 Bit: 9"]
+pub struct MPUIPSEGB19_R(crate::FieldReader<bool, bool>);
+impl MPUIPSEGB19_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUIPSEGB19_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUIPSEGB19_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUIPSEGB19` writer - MPU IP Segment Border 1 Bit: 9"]
 pub struct MPUIPSEGB19_W<'a> {
     w: &'a mut W,
 }
@@ -246,13 +388,25 @@ impl<'a> MPUIPSEGB19_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u16) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u16 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `MPUIPSEGB110`"]
-pub type MPUIPSEGB110_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUIPSEGB110`"]
+#[doc = "Field `MPUIPSEGB110` reader - MPU IP Segment Border 1 Bit: 10"]
+pub struct MPUIPSEGB110_R(crate::FieldReader<bool, bool>);
+impl MPUIPSEGB110_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUIPSEGB110_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUIPSEGB110_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUIPSEGB110` writer - MPU IP Segment Border 1 Bit: 10"]
 pub struct MPUIPSEGB110_W<'a> {
     w: &'a mut W,
 }
@@ -270,13 +424,25 @@ impl<'a> MPUIPSEGB110_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u16) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u16 & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `MPUIPSEGB111`"]
-pub type MPUIPSEGB111_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUIPSEGB111`"]
+#[doc = "Field `MPUIPSEGB111` reader - MPU IP Segment Border 1 Bit: 11"]
+pub struct MPUIPSEGB111_R(crate::FieldReader<bool, bool>);
+impl MPUIPSEGB111_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUIPSEGB111_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUIPSEGB111_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUIPSEGB111` writer - MPU IP Segment Border 1 Bit: 11"]
 pub struct MPUIPSEGB111_W<'a> {
     w: &'a mut W,
 }
@@ -294,13 +460,25 @@ impl<'a> MPUIPSEGB111_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u16) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u16 & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Reader of field `MPUIPSEGB112`"]
-pub type MPUIPSEGB112_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUIPSEGB112`"]
+#[doc = "Field `MPUIPSEGB112` reader - MPU IP Segment Border 1 Bit: 12"]
+pub struct MPUIPSEGB112_R(crate::FieldReader<bool, bool>);
+impl MPUIPSEGB112_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUIPSEGB112_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUIPSEGB112_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUIPSEGB112` writer - MPU IP Segment Border 1 Bit: 12"]
 pub struct MPUIPSEGB112_W<'a> {
     w: &'a mut W,
 }
@@ -318,13 +496,25 @@ impl<'a> MPUIPSEGB112_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u16) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u16 & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `MPUIPSEGB113`"]
-pub type MPUIPSEGB113_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUIPSEGB113`"]
+#[doc = "Field `MPUIPSEGB113` reader - MPU IP Segment Border 1 Bit: 13"]
+pub struct MPUIPSEGB113_R(crate::FieldReader<bool, bool>);
+impl MPUIPSEGB113_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUIPSEGB113_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUIPSEGB113_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUIPSEGB113` writer - MPU IP Segment Border 1 Bit: 13"]
 pub struct MPUIPSEGB113_W<'a> {
     w: &'a mut W,
 }
@@ -342,13 +532,25 @@ impl<'a> MPUIPSEGB113_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u16) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u16 & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Reader of field `MPUIPSEGB114`"]
-pub type MPUIPSEGB114_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUIPSEGB114`"]
+#[doc = "Field `MPUIPSEGB114` reader - MPU IP Segment Border 1 Bit: 14"]
+pub struct MPUIPSEGB114_R(crate::FieldReader<bool, bool>);
+impl MPUIPSEGB114_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUIPSEGB114_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUIPSEGB114_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUIPSEGB114` writer - MPU IP Segment Border 1 Bit: 14"]
 pub struct MPUIPSEGB114_W<'a> {
     w: &'a mut W,
 }
@@ -366,13 +568,25 @@ impl<'a> MPUIPSEGB114_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u16) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u16 & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Reader of field `MPUIPSEGB115`"]
-pub type MPUIPSEGB115_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUIPSEGB115`"]
+#[doc = "Field `MPUIPSEGB115` reader - MPU IP Segment Border 1 Bit: 15"]
+pub struct MPUIPSEGB115_R(crate::FieldReader<bool, bool>);
+impl MPUIPSEGB115_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUIPSEGB115_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUIPSEGB115_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUIPSEGB115` writer - MPU IP Segment Border 1 Bit: 15"]
 pub struct MPUIPSEGB115_W<'a> {
     w: &'a mut W,
 }
@@ -390,7 +604,7 @@ impl<'a> MPUIPSEGB115_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u16) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u16 & 0x01) << 15);
         self.w
     }
 }
@@ -556,5 +770,30 @@ impl W {
     #[inline(always)]
     pub fn mpuipsegb115(&mut self) -> MPUIPSEGB115_W {
         MPUIPSEGB115_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "MPU IP Segment Border 1 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mpuipsegb1](index.html) module"]
+pub struct MPUIPSEGB1_SPEC;
+impl crate::RegisterSpec for MPUIPSEGB1_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [mpuipsegb1::R](R) reader structure"]
+impl crate::Readable for MPUIPSEGB1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [mpuipsegb1::W](W) writer structure"]
+impl crate::Writable for MPUIPSEGB1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MPUIPSEGB1 to value 0"]
+impl crate::Resettable for MPUIPSEGB1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

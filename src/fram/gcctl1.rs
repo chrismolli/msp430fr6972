@@ -1,18 +1,52 @@
-#[doc = "Reader of register GCCTL1"]
-pub type R = crate::R<u16, super::GCCTL1>;
-#[doc = "Writer for register GCCTL1"]
-pub type W = crate::W<u16, super::GCCTL1>;
-#[doc = "Register GCCTL1 `reset()`'s with value 0"]
-impl crate::ResetValue for super::GCCTL1 {
-    type Type = u16;
+#[doc = "Register `GCCTL1` reader"]
+pub struct R(crate::R<GCCTL1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<GCCTL1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `CBDIFG`"]
-pub type CBDIFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CBDIFG`"]
+impl core::convert::From<crate::R<GCCTL1_SPEC>> for R {
+    fn from(reader: crate::R<GCCTL1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `GCCTL1` writer"]
+pub struct W(crate::W<GCCTL1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<GCCTL1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<GCCTL1_SPEC>> for W {
+    fn from(writer: crate::W<GCCTL1_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CBDIFG` reader - FRAM correctable bit error flag"]
+pub struct CBDIFG_R(crate::FieldReader<bool, bool>);
+impl CBDIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CBDIFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CBDIFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CBDIFG` writer - FRAM correctable bit error flag"]
 pub struct CBDIFG_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> CBDIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `UBDIFG`"]
-pub type UBDIFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UBDIFG`"]
+#[doc = "Field `UBDIFG` reader - FRAM uncorrectable bit error flag"]
+pub struct UBDIFG_R(crate::FieldReader<bool, bool>);
+impl UBDIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UBDIFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UBDIFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UBDIFG` writer - FRAM uncorrectable bit error flag"]
 pub struct UBDIFG_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +100,25 @@ impl<'a> UBDIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u16 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `ACCTEIFG`"]
-pub type ACCTEIFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ACCTEIFG`"]
+#[doc = "Field `ACCTEIFG` reader - Access time error flag"]
+pub struct ACCTEIFG_R(crate::FieldReader<bool, bool>);
+impl ACCTEIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ACCTEIFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ACCTEIFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ACCTEIFG` writer - Access time error flag"]
 pub struct ACCTEIFG_W<'a> {
     w: &'a mut W,
 }
@@ -78,7 +136,7 @@ impl<'a> ACCTEIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
         self.w
     }
 }
@@ -114,5 +172,30 @@ impl W {
     #[inline(always)]
     pub fn accteifg(&mut self) -> ACCTEIFG_W {
         ACCTEIFG_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "General Control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gcctl1](index.html) module"]
+pub struct GCCTL1_SPEC;
+impl crate::RegisterSpec for GCCTL1_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [gcctl1::R](R) reader structure"]
+impl crate::Readable for GCCTL1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [gcctl1::W](W) writer structure"]
+impl crate::Writable for GCCTL1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets GCCTL1 to value 0"]
+impl crate::Resettable for GCCTL1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

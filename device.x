@@ -25,3 +25,4 @@ PROVIDE(TIMER0_B0 = DefaultHandler);
 PROVIDE(COMP_E = DefaultHandler);
 PROVIDE(UNMI = DefaultHandler);
 PROVIDE(SYSNMI = DefaultHandler);
+

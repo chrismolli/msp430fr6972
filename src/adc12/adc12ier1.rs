@@ -1,18 +1,52 @@
-#[doc = "Reader of register ADC12IER1"]
-pub type R = crate::R<u16, super::ADC12IER1>;
-#[doc = "Writer for register ADC12IER1"]
-pub type W = crate::W<u16, super::ADC12IER1>;
-#[doc = "Register ADC12IER1 `reset()`'s with value 0"]
-impl crate::ResetValue for super::ADC12IER1 {
-    type Type = u16;
+#[doc = "Register `ADC12IER1` reader"]
+pub struct R(crate::R<ADC12IER1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ADC12IER1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ADC12IE16`"]
-pub type ADC12IE16_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC12IE16`"]
+impl core::convert::From<crate::R<ADC12IER1_SPEC>> for R {
+    fn from(reader: crate::R<ADC12IER1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ADC12IER1` writer"]
+pub struct W(crate::W<ADC12IER1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ADC12IER1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<ADC12IER1_SPEC>> for W {
+    fn from(writer: crate::W<ADC12IER1_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ADC12IE16` reader - ADC12 Memory 16 Interrupt Enable"]
+pub struct ADC12IE16_R(crate::FieldReader<bool, bool>);
+impl ADC12IE16_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC12IE16_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC12IE16_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC12IE16` writer - ADC12 Memory 16 Interrupt Enable"]
 pub struct ADC12IE16_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> ADC12IE16_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `ADC12IE17`"]
-pub type ADC12IE17_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC12IE17`"]
+#[doc = "Field `ADC12IE17` reader - ADC12 Memory 17 Interrupt Enable"]
+pub struct ADC12IE17_R(crate::FieldReader<bool, bool>);
+impl ADC12IE17_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC12IE17_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC12IE17_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC12IE17` writer - ADC12 Memory 17 Interrupt Enable"]
 pub struct ADC12IE17_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +100,25 @@ impl<'a> ADC12IE17_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `ADC12IE18`"]
-pub type ADC12IE18_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC12IE18`"]
+#[doc = "Field `ADC12IE18` reader - ADC12 Memory 18 Interrupt Enable"]
+pub struct ADC12IE18_R(crate::FieldReader<bool, bool>);
+impl ADC12IE18_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC12IE18_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC12IE18_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC12IE18` writer - ADC12 Memory 18 Interrupt Enable"]
 pub struct ADC12IE18_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +136,25 @@ impl<'a> ADC12IE18_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u16 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `ADC12IE19`"]
-pub type ADC12IE19_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC12IE19`"]
+#[doc = "Field `ADC12IE19` reader - ADC12 Memory 19 Interrupt Enable"]
+pub struct ADC12IE19_R(crate::FieldReader<bool, bool>);
+impl ADC12IE19_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC12IE19_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC12IE19_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC12IE19` writer - ADC12 Memory 19 Interrupt Enable"]
 pub struct ADC12IE19_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +172,25 @@ impl<'a> ADC12IE19_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `ADC12IE20`"]
-pub type ADC12IE20_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC12IE20`"]
+#[doc = "Field `ADC12IE20` reader - ADC12 Memory 20 Interrupt Enable"]
+pub struct ADC12IE20_R(crate::FieldReader<bool, bool>);
+impl ADC12IE20_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC12IE20_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC12IE20_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC12IE20` writer - ADC12 Memory 20 Interrupt Enable"]
 pub struct ADC12IE20_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +208,25 @@ impl<'a> ADC12IE20_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u16 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `ADC12IE21`"]
-pub type ADC12IE21_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC12IE21`"]
+#[doc = "Field `ADC12IE21` reader - ADC12 Memory 21 Interrupt Enable"]
+pub struct ADC12IE21_R(crate::FieldReader<bool, bool>);
+impl ADC12IE21_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC12IE21_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC12IE21_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC12IE21` writer - ADC12 Memory 21 Interrupt Enable"]
 pub struct ADC12IE21_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +244,25 @@ impl<'a> ADC12IE21_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u16 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `ADC12IE22`"]
-pub type ADC12IE22_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC12IE22`"]
+#[doc = "Field `ADC12IE22` reader - ADC12 Memory 22 Interrupt Enable"]
+pub struct ADC12IE22_R(crate::FieldReader<bool, bool>);
+impl ADC12IE22_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC12IE22_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC12IE22_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC12IE22` writer - ADC12 Memory 22 Interrupt Enable"]
 pub struct ADC12IE22_W<'a> {
     w: &'a mut W,
 }
@@ -174,13 +280,25 @@ impl<'a> ADC12IE22_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u16 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `ADC12IE23`"]
-pub type ADC12IE23_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC12IE23`"]
+#[doc = "Field `ADC12IE23` reader - ADC12 Memory 23 Interrupt Enable"]
+pub struct ADC12IE23_R(crate::FieldReader<bool, bool>);
+impl ADC12IE23_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC12IE23_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC12IE23_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC12IE23` writer - ADC12 Memory 23 Interrupt Enable"]
 pub struct ADC12IE23_W<'a> {
     w: &'a mut W,
 }
@@ -198,13 +316,25 @@ impl<'a> ADC12IE23_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Reader of field `ADC12IE24`"]
-pub type ADC12IE24_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC12IE24`"]
+#[doc = "Field `ADC12IE24` reader - ADC12 Memory 24 Interrupt Enable"]
+pub struct ADC12IE24_R(crate::FieldReader<bool, bool>);
+impl ADC12IE24_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC12IE24_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC12IE24_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC12IE24` writer - ADC12 Memory 24 Interrupt Enable"]
 pub struct ADC12IE24_W<'a> {
     w: &'a mut W,
 }
@@ -222,13 +352,25 @@ impl<'a> ADC12IE24_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u16) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u16 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `ADC12IE25`"]
-pub type ADC12IE25_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC12IE25`"]
+#[doc = "Field `ADC12IE25` reader - ADC12 Memory 25 Interrupt Enable"]
+pub struct ADC12IE25_R(crate::FieldReader<bool, bool>);
+impl ADC12IE25_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC12IE25_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC12IE25_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC12IE25` writer - ADC12 Memory 25 Interrupt Enable"]
 pub struct ADC12IE25_W<'a> {
     w: &'a mut W,
 }
@@ -246,13 +388,25 @@ impl<'a> ADC12IE25_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u16) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u16 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `ADC12IE26`"]
-pub type ADC12IE26_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC12IE26`"]
+#[doc = "Field `ADC12IE26` reader - ADC12 Memory 26 Interrupt Enable"]
+pub struct ADC12IE26_R(crate::FieldReader<bool, bool>);
+impl ADC12IE26_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC12IE26_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC12IE26_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC12IE26` writer - ADC12 Memory 26 Interrupt Enable"]
 pub struct ADC12IE26_W<'a> {
     w: &'a mut W,
 }
@@ -270,13 +424,25 @@ impl<'a> ADC12IE26_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u16) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u16 & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `ADC12IE27`"]
-pub type ADC12IE27_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC12IE27`"]
+#[doc = "Field `ADC12IE27` reader - ADC12 Memory 27 Interrupt Enable"]
+pub struct ADC12IE27_R(crate::FieldReader<bool, bool>);
+impl ADC12IE27_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC12IE27_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC12IE27_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC12IE27` writer - ADC12 Memory 27 Interrupt Enable"]
 pub struct ADC12IE27_W<'a> {
     w: &'a mut W,
 }
@@ -294,13 +460,25 @@ impl<'a> ADC12IE27_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u16) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u16 & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Reader of field `ADC12IE28`"]
-pub type ADC12IE28_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC12IE28`"]
+#[doc = "Field `ADC12IE28` reader - ADC12 Memory 28 Interrupt Enable"]
+pub struct ADC12IE28_R(crate::FieldReader<bool, bool>);
+impl ADC12IE28_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC12IE28_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC12IE28_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC12IE28` writer - ADC12 Memory 28 Interrupt Enable"]
 pub struct ADC12IE28_W<'a> {
     w: &'a mut W,
 }
@@ -318,13 +496,25 @@ impl<'a> ADC12IE28_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u16) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u16 & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `ADC12IE29`"]
-pub type ADC12IE29_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC12IE29`"]
+#[doc = "Field `ADC12IE29` reader - ADC12 Memory 29 Interrupt Enable"]
+pub struct ADC12IE29_R(crate::FieldReader<bool, bool>);
+impl ADC12IE29_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC12IE29_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC12IE29_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC12IE29` writer - ADC12 Memory 29 Interrupt Enable"]
 pub struct ADC12IE29_W<'a> {
     w: &'a mut W,
 }
@@ -342,13 +532,25 @@ impl<'a> ADC12IE29_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u16) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u16 & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Reader of field `ADC12IE30`"]
-pub type ADC12IE30_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC12IE30`"]
+#[doc = "Field `ADC12IE30` reader - ADC12 Memory 30 Interrupt Enable"]
+pub struct ADC12IE30_R(crate::FieldReader<bool, bool>);
+impl ADC12IE30_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC12IE30_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC12IE30_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC12IE30` writer - ADC12 Memory 30 Interrupt Enable"]
 pub struct ADC12IE30_W<'a> {
     w: &'a mut W,
 }
@@ -366,13 +568,25 @@ impl<'a> ADC12IE30_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u16) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u16 & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Reader of field `ADC12IE31`"]
-pub type ADC12IE31_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC12IE31`"]
+#[doc = "Field `ADC12IE31` reader - ADC12 Memory 31 Interrupt Enable"]
+pub struct ADC12IE31_R(crate::FieldReader<bool, bool>);
+impl ADC12IE31_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC12IE31_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC12IE31_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC12IE31` writer - ADC12 Memory 31 Interrupt Enable"]
 pub struct ADC12IE31_W<'a> {
     w: &'a mut W,
 }
@@ -390,7 +604,7 @@ impl<'a> ADC12IE31_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u16) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u16 & 0x01) << 15);
         self.w
     }
 }
@@ -556,5 +770,30 @@ impl W {
     #[inline(always)]
     pub fn adc12ie31(&mut self) -> ADC12IE31_W {
         ADC12IE31_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "ADC12 B Interrupt Enable 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adc12ier1](index.html) module"]
+pub struct ADC12IER1_SPEC;
+impl crate::RegisterSpec for ADC12IER1_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [adc12ier1::R](R) reader structure"]
+impl crate::Readable for ADC12IER1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [adc12ier1::W](W) writer structure"]
+impl crate::Writable for ADC12IER1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ADC12IER1 to value 0"]
+impl crate::Resettable for ADC12IER1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

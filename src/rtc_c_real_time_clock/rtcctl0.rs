@@ -1,18 +1,52 @@
-#[doc = "Reader of register RTCCTL0"]
-pub type R = crate::R<u16, super::RTCCTL0>;
-#[doc = "Writer for register RTCCTL0"]
-pub type W = crate::W<u16, super::RTCCTL0>;
-#[doc = "Register RTCCTL0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::RTCCTL0 {
-    type Type = u16;
+#[doc = "Register `RTCCTL0` reader"]
+pub struct R(crate::R<RTCCTL0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RTCCTL0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `RTCRDYIFG`"]
-pub type RTCRDYIFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTCRDYIFG`"]
+impl core::convert::From<crate::R<RTCCTL0_SPEC>> for R {
+    fn from(reader: crate::R<RTCCTL0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `RTCCTL0` writer"]
+pub struct W(crate::W<RTCCTL0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RTCCTL0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<RTCCTL0_SPEC>> for W {
+    fn from(writer: crate::W<RTCCTL0_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `RTCRDYIFG` reader - RTC Ready Interrupt Flag"]
+pub struct RTCRDYIFG_R(crate::FieldReader<bool, bool>);
+impl RTCRDYIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCRDYIFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCRDYIFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCRDYIFG` writer - RTC Ready Interrupt Flag"]
 pub struct RTCRDYIFG_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> RTCRDYIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `RTCAIFG`"]
-pub type RTCAIFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTCAIFG`"]
+#[doc = "Field `RTCAIFG` reader - RTC Alarm Interrupt Flag"]
+pub struct RTCAIFG_R(crate::FieldReader<bool, bool>);
+impl RTCAIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCAIFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCAIFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCAIFG` writer - RTC Alarm Interrupt Flag"]
 pub struct RTCAIFG_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +100,25 @@ impl<'a> RTCAIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `RTCTEVIFG`"]
-pub type RTCTEVIFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTCTEVIFG`"]
+#[doc = "Field `RTCTEVIFG` reader - RTC Time Event Interrupt Flag"]
+pub struct RTCTEVIFG_R(crate::FieldReader<bool, bool>);
+impl RTCTEVIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCTEVIFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCTEVIFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCTEVIFG` writer - RTC Time Event Interrupt Flag"]
 pub struct RTCTEVIFG_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +136,25 @@ impl<'a> RTCTEVIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u16 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `RTCOFIFG`"]
-pub type RTCOFIFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTCOFIFG`"]
+#[doc = "Field `RTCOFIFG` reader - RTC 32kHz cyrstal oscillator fault interrupt flag"]
+pub struct RTCOFIFG_R(crate::FieldReader<bool, bool>);
+impl RTCOFIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCOFIFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCOFIFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCOFIFG` writer - RTC 32kHz cyrstal oscillator fault interrupt flag"]
 pub struct RTCOFIFG_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +172,25 @@ impl<'a> RTCOFIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `RTCRDYIE`"]
-pub type RTCRDYIE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTCRDYIE`"]
+#[doc = "Field `RTCRDYIE` reader - RTC Ready Interrupt Enable Flag"]
+pub struct RTCRDYIE_R(crate::FieldReader<bool, bool>);
+impl RTCRDYIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCRDYIE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCRDYIE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCRDYIE` writer - RTC Ready Interrupt Enable Flag"]
 pub struct RTCRDYIE_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +208,25 @@ impl<'a> RTCRDYIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u16 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `RTCAIE`"]
-pub type RTCAIE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTCAIE`"]
+#[doc = "Field `RTCAIE` reader - RTC Alarm Interrupt Enable Flag"]
+pub struct RTCAIE_R(crate::FieldReader<bool, bool>);
+impl RTCAIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCAIE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCAIE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCAIE` writer - RTC Alarm Interrupt Enable Flag"]
 pub struct RTCAIE_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +244,25 @@ impl<'a> RTCAIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u16 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `RTCTEVIE`"]
-pub type RTCTEVIE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTCTEVIE`"]
+#[doc = "Field `RTCTEVIE` reader - RTC Time Event Interrupt Enable Flag"]
+pub struct RTCTEVIE_R(crate::FieldReader<bool, bool>);
+impl RTCTEVIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCTEVIE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCTEVIE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCTEVIE` writer - RTC Time Event Interrupt Enable Flag"]
 pub struct RTCTEVIE_W<'a> {
     w: &'a mut W,
 }
@@ -174,13 +280,25 @@ impl<'a> RTCTEVIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u16 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `RTCOFIE`"]
-pub type RTCOFIE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTCOFIE`"]
+#[doc = "Field `RTCOFIE` reader - RTC 32kHz cyrstal oscillator fault interrupt enable"]
+pub struct RTCOFIE_R(crate::FieldReader<bool, bool>);
+impl RTCOFIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCOFIE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCOFIE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCOFIE` writer - RTC 32kHz cyrstal oscillator fault interrupt enable"]
 pub struct RTCOFIE_W<'a> {
     w: &'a mut W,
 }
@@ -198,7 +316,7 @@ impl<'a> RTCOFIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
         self.w
     }
 }
@@ -284,5 +402,30 @@ impl W {
     #[inline(always)]
     pub fn rtcofie(&mut self) -> RTCOFIE_W {
         RTCOFIE_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Real Timer Clock Control 0/Key\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rtcctl0](index.html) module"]
+pub struct RTCCTL0_SPEC;
+impl crate::RegisterSpec for RTCCTL0_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [rtcctl0::R](R) reader structure"]
+impl crate::Readable for RTCCTL0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [rtcctl0::W](W) writer structure"]
+impl crate::Writable for RTCCTL0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets RTCCTL0 to value 0"]
+impl crate::Resettable for RTCCTL0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

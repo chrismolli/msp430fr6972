@@ -1,18 +1,52 @@
-#[doc = "Reader of register RTCOCAL"]
-pub type R = crate::R<u16, super::RTCOCAL>;
-#[doc = "Writer for register RTCOCAL"]
-pub type W = crate::W<u16, super::RTCOCAL>;
-#[doc = "Register RTCOCAL `reset()`'s with value 0"]
-impl crate::ResetValue for super::RTCOCAL {
-    type Type = u16;
+#[doc = "Register `RTCOCAL` reader"]
+pub struct R(crate::R<RTCOCAL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RTCOCAL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `RTCOCAL0`"]
-pub type RTCOCAL0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTCOCAL0`"]
+impl core::convert::From<crate::R<RTCOCAL_SPEC>> for R {
+    fn from(reader: crate::R<RTCOCAL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `RTCOCAL` writer"]
+pub struct W(crate::W<RTCOCAL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RTCOCAL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<RTCOCAL_SPEC>> for W {
+    fn from(writer: crate::W<RTCOCAL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `RTCOCAL0` reader - RTC Offset Calibration Bit 0"]
+pub struct RTCOCAL0_R(crate::FieldReader<bool, bool>);
+impl RTCOCAL0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCOCAL0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCOCAL0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCOCAL0` writer - RTC Offset Calibration Bit 0"]
 pub struct RTCOCAL0_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> RTCOCAL0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `RTCOCAL1`"]
-pub type RTCOCAL1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTCOCAL1`"]
+#[doc = "Field `RTCOCAL1` reader - RTC Offset Calibration Bit 1"]
+pub struct RTCOCAL1_R(crate::FieldReader<bool, bool>);
+impl RTCOCAL1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCOCAL1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCOCAL1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCOCAL1` writer - RTC Offset Calibration Bit 1"]
 pub struct RTCOCAL1_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +100,25 @@ impl<'a> RTCOCAL1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `RTCOCAL2`"]
-pub type RTCOCAL2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTCOCAL2`"]
+#[doc = "Field `RTCOCAL2` reader - RTC Offset Calibration Bit 2"]
+pub struct RTCOCAL2_R(crate::FieldReader<bool, bool>);
+impl RTCOCAL2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCOCAL2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCOCAL2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCOCAL2` writer - RTC Offset Calibration Bit 2"]
 pub struct RTCOCAL2_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +136,25 @@ impl<'a> RTCOCAL2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u16 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `RTCOCAL3`"]
-pub type RTCOCAL3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTCOCAL3`"]
+#[doc = "Field `RTCOCAL3` reader - RTC Offset Calibration Bit 3"]
+pub struct RTCOCAL3_R(crate::FieldReader<bool, bool>);
+impl RTCOCAL3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCOCAL3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCOCAL3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCOCAL3` writer - RTC Offset Calibration Bit 3"]
 pub struct RTCOCAL3_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +172,25 @@ impl<'a> RTCOCAL3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `RTCOCAL4`"]
-pub type RTCOCAL4_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTCOCAL4`"]
+#[doc = "Field `RTCOCAL4` reader - RTC Offset Calibration Bit 4"]
+pub struct RTCOCAL4_R(crate::FieldReader<bool, bool>);
+impl RTCOCAL4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCOCAL4_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCOCAL4_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCOCAL4` writer - RTC Offset Calibration Bit 4"]
 pub struct RTCOCAL4_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +208,25 @@ impl<'a> RTCOCAL4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u16 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `RTCOCAL5`"]
-pub type RTCOCAL5_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTCOCAL5`"]
+#[doc = "Field `RTCOCAL5` reader - RTC Offset Calibration Bit 5"]
+pub struct RTCOCAL5_R(crate::FieldReader<bool, bool>);
+impl RTCOCAL5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCOCAL5_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCOCAL5_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCOCAL5` writer - RTC Offset Calibration Bit 5"]
 pub struct RTCOCAL5_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +244,25 @@ impl<'a> RTCOCAL5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u16 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `RTCOCAL6`"]
-pub type RTCOCAL6_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTCOCAL6`"]
+#[doc = "Field `RTCOCAL6` reader - RTC Offset Calibration Bit 6"]
+pub struct RTCOCAL6_R(crate::FieldReader<bool, bool>);
+impl RTCOCAL6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCOCAL6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCOCAL6_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCOCAL6` writer - RTC Offset Calibration Bit 6"]
 pub struct RTCOCAL6_W<'a> {
     w: &'a mut W,
 }
@@ -174,13 +280,25 @@ impl<'a> RTCOCAL6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u16 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `RTCOCAL7`"]
-pub type RTCOCAL7_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTCOCAL7`"]
+#[doc = "Field `RTCOCAL7` reader - RTC Offset Calibration Bit 7"]
+pub struct RTCOCAL7_R(crate::FieldReader<bool, bool>);
+impl RTCOCAL7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCOCAL7_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCOCAL7_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCOCAL7` writer - RTC Offset Calibration Bit 7"]
 pub struct RTCOCAL7_W<'a> {
     w: &'a mut W,
 }
@@ -198,13 +316,25 @@ impl<'a> RTCOCAL7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Reader of field `RTCOCALS`"]
-pub type RTCOCALS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RTCOCALS`"]
+#[doc = "Field `RTCOCALS` reader - RTC Offset Calibration Sign"]
+pub struct RTCOCALS_R(crate::FieldReader<bool, bool>);
+impl RTCOCALS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCOCALS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCOCALS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCOCALS` writer - RTC Offset Calibration Sign"]
 pub struct RTCOCALS_W<'a> {
     w: &'a mut W,
 }
@@ -222,7 +352,7 @@ impl<'a> RTCOCALS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u16) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u16 & 0x01) << 15);
         self.w
     }
 }
@@ -318,5 +448,30 @@ impl W {
     #[inline(always)]
     pub fn rtcocals(&mut self) -> RTCOCALS_W {
         RTCOCALS_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Real Timer Clock Offset Calibartion\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rtcocal](index.html) module"]
+pub struct RTCOCAL_SPEC;
+impl crate::RegisterSpec for RTCOCAL_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [rtcocal::R](R) reader structure"]
+impl crate::Readable for RTCOCAL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [rtcocal::W](W) writer structure"]
+impl crate::Writable for RTCOCAL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets RTCOCAL to value 0"]
+impl crate::Resettable for RTCOCAL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

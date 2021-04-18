@@ -1,18 +1,52 @@
-#[doc = "Reader of register PMMIFG"]
-pub type R = crate::R<u16, super::PMMIFG>;
-#[doc = "Writer for register PMMIFG"]
-pub type W = crate::W<u16, super::PMMIFG>;
-#[doc = "Register PMMIFG `reset()`'s with value 0"]
-impl crate::ResetValue for super::PMMIFG {
-    type Type = u16;
+#[doc = "Register `PMMIFG` reader"]
+pub struct R(crate::R<PMMIFG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PMMIFG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `PMMBORIFG`"]
-pub type PMMBORIFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PMMBORIFG`"]
+impl core::convert::From<crate::R<PMMIFG_SPEC>> for R {
+    fn from(reader: crate::R<PMMIFG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PMMIFG` writer"]
+pub struct W(crate::W<PMMIFG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PMMIFG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<PMMIFG_SPEC>> for W {
+    fn from(writer: crate::W<PMMIFG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PMMBORIFG` reader - PMM Software BOR interrupt flag"]
+pub struct PMMBORIFG_R(crate::FieldReader<bool, bool>);
+impl PMMBORIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PMMBORIFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PMMBORIFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PMMBORIFG` writer - PMM Software BOR interrupt flag"]
 pub struct PMMBORIFG_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> PMMBORIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u16) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u16 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `PMMRSTIFG`"]
-pub type PMMRSTIFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PMMRSTIFG`"]
+#[doc = "Field `PMMRSTIFG` reader - PMM RESET pin interrupt flag"]
+pub struct PMMRSTIFG_R(crate::FieldReader<bool, bool>);
+impl PMMRSTIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PMMRSTIFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PMMRSTIFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PMMRSTIFG` writer - PMM RESET pin interrupt flag"]
 pub struct PMMRSTIFG_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +100,25 @@ impl<'a> PMMRSTIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u16) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u16 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `PMMPORIFG`"]
-pub type PMMPORIFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PMMPORIFG`"]
+#[doc = "Field `PMMPORIFG` reader - PMM Software POR interrupt flag"]
+pub struct PMMPORIFG_R(crate::FieldReader<bool, bool>);
+impl PMMPORIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PMMPORIFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PMMPORIFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PMMPORIFG` writer - PMM Software POR interrupt flag"]
 pub struct PMMPORIFG_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +136,25 @@ impl<'a> PMMPORIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u16) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u16 & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `SVSHIFG`"]
-pub type SVSHIFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SVSHIFG`"]
+#[doc = "Field `SVSHIFG` reader - SVS low side interrupt flag"]
+pub struct SVSHIFG_R(crate::FieldReader<bool, bool>);
+impl SVSHIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SVSHIFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SVSHIFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SVSHIFG` writer - SVS low side interrupt flag"]
 pub struct SVSHIFG_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +172,25 @@ impl<'a> SVSHIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u16) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u16 & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Reader of field `PMMLPM5IFG`"]
-pub type PMMLPM5IFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PMMLPM5IFG`"]
+#[doc = "Field `PMMLPM5IFG` reader - LPM5 indication Flag"]
+pub struct PMMLPM5IFG_R(crate::FieldReader<bool, bool>);
+impl PMMLPM5IFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PMMLPM5IFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PMMLPM5IFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PMMLPM5IFG` writer - LPM5 indication Flag"]
 pub struct PMMLPM5IFG_W<'a> {
     w: &'a mut W,
 }
@@ -126,7 +208,7 @@ impl<'a> PMMLPM5IFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u16) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u16 & 0x01) << 15);
         self.w
     }
 }
@@ -182,5 +264,30 @@ impl W {
     #[inline(always)]
     pub fn pmmlpm5ifg(&mut self) -> PMMLPM5IFG_W {
         PMMLPM5IFG_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "PMM Interrupt Flag\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmmifg](index.html) module"]
+pub struct PMMIFG_SPEC;
+impl crate::RegisterSpec for PMMIFG_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [pmmifg::R](R) reader structure"]
+impl crate::Readable for PMMIFG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pmmifg::W](W) writer structure"]
+impl crate::Writable for PMMIFG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PMMIFG to value 0"]
+impl crate::Resettable for PMMIFG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

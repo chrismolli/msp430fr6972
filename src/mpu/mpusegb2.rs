@@ -1,18 +1,52 @@
-#[doc = "Reader of register MPUSEGB2"]
-pub type R = crate::R<u16, super::MPUSEGB2>;
-#[doc = "Writer for register MPUSEGB2"]
-pub type W = crate::W<u16, super::MPUSEGB2>;
-#[doc = "Register MPUSEGB2 `reset()`'s with value 0"]
-impl crate::ResetValue for super::MPUSEGB2 {
-    type Type = u16;
+#[doc = "Register `MPUSEGB2` reader"]
+pub struct R(crate::R<MPUSEGB2_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MPUSEGB2_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `MPUSEGB20`"]
-pub type MPUSEGB20_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUSEGB20`"]
+impl core::convert::From<crate::R<MPUSEGB2_SPEC>> for R {
+    fn from(reader: crate::R<MPUSEGB2_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `MPUSEGB2` writer"]
+pub struct W(crate::W<MPUSEGB2_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MPUSEGB2_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<MPUSEGB2_SPEC>> for W {
+    fn from(writer: crate::W<MPUSEGB2_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `MPUSEGB20` reader - MPU Segment Border 2 Bit: 0"]
+pub struct MPUSEGB20_R(crate::FieldReader<bool, bool>);
+impl MPUSEGB20_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUSEGB20_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUSEGB20_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUSEGB20` writer - MPU Segment Border 2 Bit: 0"]
 pub struct MPUSEGB20_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> MPUSEGB20_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `MPUSEGB21`"]
-pub type MPUSEGB21_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUSEGB21`"]
+#[doc = "Field `MPUSEGB21` reader - MPU Segment Border 2 Bit: 1"]
+pub struct MPUSEGB21_R(crate::FieldReader<bool, bool>);
+impl MPUSEGB21_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUSEGB21_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUSEGB21_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUSEGB21` writer - MPU Segment Border 2 Bit: 1"]
 pub struct MPUSEGB21_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +100,25 @@ impl<'a> MPUSEGB21_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `MPUSEGB22`"]
-pub type MPUSEGB22_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUSEGB22`"]
+#[doc = "Field `MPUSEGB22` reader - MPU Segment Border 2 Bit: 2"]
+pub struct MPUSEGB22_R(crate::FieldReader<bool, bool>);
+impl MPUSEGB22_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUSEGB22_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUSEGB22_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUSEGB22` writer - MPU Segment Border 2 Bit: 2"]
 pub struct MPUSEGB22_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +136,25 @@ impl<'a> MPUSEGB22_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u16 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `MPUSEGB23`"]
-pub type MPUSEGB23_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUSEGB23`"]
+#[doc = "Field `MPUSEGB23` reader - MPU Segment Border 2 Bit: 3"]
+pub struct MPUSEGB23_R(crate::FieldReader<bool, bool>);
+impl MPUSEGB23_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUSEGB23_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUSEGB23_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUSEGB23` writer - MPU Segment Border 2 Bit: 3"]
 pub struct MPUSEGB23_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +172,25 @@ impl<'a> MPUSEGB23_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `MPUSEGB24`"]
-pub type MPUSEGB24_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUSEGB24`"]
+#[doc = "Field `MPUSEGB24` reader - MPU Segment Border 2 Bit: 4"]
+pub struct MPUSEGB24_R(crate::FieldReader<bool, bool>);
+impl MPUSEGB24_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUSEGB24_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUSEGB24_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUSEGB24` writer - MPU Segment Border 2 Bit: 4"]
 pub struct MPUSEGB24_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +208,25 @@ impl<'a> MPUSEGB24_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u16 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `MPUSEGB25`"]
-pub type MPUSEGB25_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUSEGB25`"]
+#[doc = "Field `MPUSEGB25` reader - MPU Segment Border 2 Bit: 5"]
+pub struct MPUSEGB25_R(crate::FieldReader<bool, bool>);
+impl MPUSEGB25_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUSEGB25_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUSEGB25_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUSEGB25` writer - MPU Segment Border 2 Bit: 5"]
 pub struct MPUSEGB25_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +244,25 @@ impl<'a> MPUSEGB25_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u16 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `MPUSEGB26`"]
-pub type MPUSEGB26_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUSEGB26`"]
+#[doc = "Field `MPUSEGB26` reader - MPU Segment Border 2 Bit: 6"]
+pub struct MPUSEGB26_R(crate::FieldReader<bool, bool>);
+impl MPUSEGB26_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUSEGB26_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUSEGB26_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUSEGB26` writer - MPU Segment Border 2 Bit: 6"]
 pub struct MPUSEGB26_W<'a> {
     w: &'a mut W,
 }
@@ -174,13 +280,25 @@ impl<'a> MPUSEGB26_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u16 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `MPUSEGB27`"]
-pub type MPUSEGB27_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUSEGB27`"]
+#[doc = "Field `MPUSEGB27` reader - MPU Segment Border 2 Bit: 7"]
+pub struct MPUSEGB27_R(crate::FieldReader<bool, bool>);
+impl MPUSEGB27_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUSEGB27_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUSEGB27_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUSEGB27` writer - MPU Segment Border 2 Bit: 7"]
 pub struct MPUSEGB27_W<'a> {
     w: &'a mut W,
 }
@@ -198,13 +316,25 @@ impl<'a> MPUSEGB27_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Reader of field `MPUSEGB28`"]
-pub type MPUSEGB28_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUSEGB28`"]
+#[doc = "Field `MPUSEGB28` reader - MPU Segment Border 2 Bit: 8"]
+pub struct MPUSEGB28_R(crate::FieldReader<bool, bool>);
+impl MPUSEGB28_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUSEGB28_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUSEGB28_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUSEGB28` writer - MPU Segment Border 2 Bit: 8"]
 pub struct MPUSEGB28_W<'a> {
     w: &'a mut W,
 }
@@ -222,13 +352,25 @@ impl<'a> MPUSEGB28_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u16) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u16 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `MPUSEGB29`"]
-pub type MPUSEGB29_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUSEGB29`"]
+#[doc = "Field `MPUSEGB29` reader - MPU Segment Border 2 Bit: 9"]
+pub struct MPUSEGB29_R(crate::FieldReader<bool, bool>);
+impl MPUSEGB29_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUSEGB29_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUSEGB29_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUSEGB29` writer - MPU Segment Border 2 Bit: 9"]
 pub struct MPUSEGB29_W<'a> {
     w: &'a mut W,
 }
@@ -246,13 +388,25 @@ impl<'a> MPUSEGB29_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u16) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u16 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `MPUSEGB210`"]
-pub type MPUSEGB210_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUSEGB210`"]
+#[doc = "Field `MPUSEGB210` reader - MPU Segment Border 2 Bit: 10"]
+pub struct MPUSEGB210_R(crate::FieldReader<bool, bool>);
+impl MPUSEGB210_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUSEGB210_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUSEGB210_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUSEGB210` writer - MPU Segment Border 2 Bit: 10"]
 pub struct MPUSEGB210_W<'a> {
     w: &'a mut W,
 }
@@ -270,13 +424,25 @@ impl<'a> MPUSEGB210_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u16) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u16 & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `MPUSEGB211`"]
-pub type MPUSEGB211_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUSEGB211`"]
+#[doc = "Field `MPUSEGB211` reader - MPU Segment Border 2 Bit: 11"]
+pub struct MPUSEGB211_R(crate::FieldReader<bool, bool>);
+impl MPUSEGB211_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUSEGB211_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUSEGB211_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUSEGB211` writer - MPU Segment Border 2 Bit: 11"]
 pub struct MPUSEGB211_W<'a> {
     w: &'a mut W,
 }
@@ -294,13 +460,25 @@ impl<'a> MPUSEGB211_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u16) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u16 & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Reader of field `MPUSEGB212`"]
-pub type MPUSEGB212_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUSEGB212`"]
+#[doc = "Field `MPUSEGB212` reader - MPU Segment Border 2 Bit: 12"]
+pub struct MPUSEGB212_R(crate::FieldReader<bool, bool>);
+impl MPUSEGB212_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUSEGB212_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUSEGB212_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUSEGB212` writer - MPU Segment Border 2 Bit: 12"]
 pub struct MPUSEGB212_W<'a> {
     w: &'a mut W,
 }
@@ -318,13 +496,25 @@ impl<'a> MPUSEGB212_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u16) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u16 & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `MPUSEGB213`"]
-pub type MPUSEGB213_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUSEGB213`"]
+#[doc = "Field `MPUSEGB213` reader - MPU Segment Border 2 Bit: 13"]
+pub struct MPUSEGB213_R(crate::FieldReader<bool, bool>);
+impl MPUSEGB213_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUSEGB213_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUSEGB213_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUSEGB213` writer - MPU Segment Border 2 Bit: 13"]
 pub struct MPUSEGB213_W<'a> {
     w: &'a mut W,
 }
@@ -342,13 +532,25 @@ impl<'a> MPUSEGB213_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u16) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u16 & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Reader of field `MPUSEGB214`"]
-pub type MPUSEGB214_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUSEGB214`"]
+#[doc = "Field `MPUSEGB214` reader - MPU Segment Border 2 Bit: 14"]
+pub struct MPUSEGB214_R(crate::FieldReader<bool, bool>);
+impl MPUSEGB214_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUSEGB214_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUSEGB214_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUSEGB214` writer - MPU Segment Border 2 Bit: 14"]
 pub struct MPUSEGB214_W<'a> {
     w: &'a mut W,
 }
@@ -366,13 +568,25 @@ impl<'a> MPUSEGB214_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u16) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u16 & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Reader of field `MPUSEGB215`"]
-pub type MPUSEGB215_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MPUSEGB215`"]
+#[doc = "Field `MPUSEGB215` reader - MPU Segment Border 2 Bit: 15"]
+pub struct MPUSEGB215_R(crate::FieldReader<bool, bool>);
+impl MPUSEGB215_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MPUSEGB215_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MPUSEGB215_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MPUSEGB215` writer - MPU Segment Border 2 Bit: 15"]
 pub struct MPUSEGB215_W<'a> {
     w: &'a mut W,
 }
@@ -390,7 +604,7 @@ impl<'a> MPUSEGB215_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u16) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u16 & 0x01) << 15);
         self.w
     }
 }
@@ -556,5 +770,30 @@ impl W {
     #[inline(always)]
     pub fn mpusegb215(&mut self) -> MPUSEGB215_W {
         MPUSEGB215_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "MPU Segmentation Border 2 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mpusegb2](index.html) module"]
+pub struct MPUSEGB2_SPEC;
+impl crate::RegisterSpec for MPUSEGB2_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [mpusegb2::R](R) reader structure"]
+impl crate::Readable for MPUSEGB2_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [mpusegb2::W](W) writer structure"]
+impl crate::Writable for MPUSEGB2_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MPUSEGB2 to value 0"]
+impl crate::Resettable for MPUSEGB2_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

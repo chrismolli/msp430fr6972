@@ -1,18 +1,52 @@
-#[doc = "Reader of register LCDCCPCTL"]
-pub type R = crate::R<u16, super::LCDCCPCTL>;
-#[doc = "Writer for register LCDCCPCTL"]
-pub type W = crate::W<u16, super::LCDCCPCTL>;
-#[doc = "Register LCDCCPCTL `reset()`'s with value 0"]
-impl crate::ResetValue for super::LCDCCPCTL {
-    type Type = u16;
+#[doc = "Register `LCDCCPCTL` reader"]
+pub struct R(crate::R<LCDCCPCTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<LCDCCPCTL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `LCDCPDIS0`"]
-pub type LCDCPDIS0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LCDCPDIS0`"]
+impl core::convert::From<crate::R<LCDCCPCTL_SPEC>> for R {
+    fn from(reader: crate::R<LCDCCPCTL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `LCDCCPCTL` writer"]
+pub struct W(crate::W<LCDCCPCTL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<LCDCCPCTL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<LCDCCPCTL_SPEC>> for W {
+    fn from(writer: crate::W<LCDCCPCTL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `LCDCPDIS0` reader - LCD charge pump disable"]
+pub struct LCDCPDIS0_R(crate::FieldReader<bool, bool>);
+impl LCDCPDIS0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LCDCPDIS0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LCDCPDIS0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LCDCPDIS0` writer - LCD charge pump disable"]
 pub struct LCDCPDIS0_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> LCDCPDIS0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `LCDCPDIS1`"]
-pub type LCDCPDIS1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LCDCPDIS1`"]
+#[doc = "Field `LCDCPDIS1` reader - LCD charge pump disable"]
+pub struct LCDCPDIS1_R(crate::FieldReader<bool, bool>);
+impl LCDCPDIS1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LCDCPDIS1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LCDCPDIS1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LCDCPDIS1` writer - LCD charge pump disable"]
 pub struct LCDCPDIS1_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +100,25 @@ impl<'a> LCDCPDIS1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `LCDCPDIS2`"]
-pub type LCDCPDIS2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LCDCPDIS2`"]
+#[doc = "Field `LCDCPDIS2` reader - LCD charge pump disable"]
+pub struct LCDCPDIS2_R(crate::FieldReader<bool, bool>);
+impl LCDCPDIS2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LCDCPDIS2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LCDCPDIS2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LCDCPDIS2` writer - LCD charge pump disable"]
 pub struct LCDCPDIS2_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +136,25 @@ impl<'a> LCDCPDIS2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u16 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `LCDCPDIS3`"]
-pub type LCDCPDIS3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LCDCPDIS3`"]
+#[doc = "Field `LCDCPDIS3` reader - LCD charge pump disable"]
+pub struct LCDCPDIS3_R(crate::FieldReader<bool, bool>);
+impl LCDCPDIS3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LCDCPDIS3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LCDCPDIS3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LCDCPDIS3` writer - LCD charge pump disable"]
 pub struct LCDCPDIS3_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +172,25 @@ impl<'a> LCDCPDIS3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `LCDCPDIS4`"]
-pub type LCDCPDIS4_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LCDCPDIS4`"]
+#[doc = "Field `LCDCPDIS4` reader - LCD charge pump disable"]
+pub struct LCDCPDIS4_R(crate::FieldReader<bool, bool>);
+impl LCDCPDIS4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LCDCPDIS4_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LCDCPDIS4_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LCDCPDIS4` writer - LCD charge pump disable"]
 pub struct LCDCPDIS4_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +208,25 @@ impl<'a> LCDCPDIS4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u16 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `LCDCPDIS5`"]
-pub type LCDCPDIS5_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LCDCPDIS5`"]
+#[doc = "Field `LCDCPDIS5` reader - LCD charge pump disable"]
+pub struct LCDCPDIS5_R(crate::FieldReader<bool, bool>);
+impl LCDCPDIS5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LCDCPDIS5_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LCDCPDIS5_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LCDCPDIS5` writer - LCD charge pump disable"]
 pub struct LCDCPDIS5_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +244,25 @@ impl<'a> LCDCPDIS5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u16 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `LCDCPDIS6`"]
-pub type LCDCPDIS6_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LCDCPDIS6`"]
+#[doc = "Field `LCDCPDIS6` reader - LCD charge pump disable"]
+pub struct LCDCPDIS6_R(crate::FieldReader<bool, bool>);
+impl LCDCPDIS6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LCDCPDIS6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LCDCPDIS6_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LCDCPDIS6` writer - LCD charge pump disable"]
 pub struct LCDCPDIS6_W<'a> {
     w: &'a mut W,
 }
@@ -174,13 +280,25 @@ impl<'a> LCDCPDIS6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u16 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `LCDCPDIS7`"]
-pub type LCDCPDIS7_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LCDCPDIS7`"]
+#[doc = "Field `LCDCPDIS7` reader - LCD charge pump disable"]
+pub struct LCDCPDIS7_R(crate::FieldReader<bool, bool>);
+impl LCDCPDIS7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LCDCPDIS7_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LCDCPDIS7_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LCDCPDIS7` writer - LCD charge pump disable"]
 pub struct LCDCPDIS7_W<'a> {
     w: &'a mut W,
 }
@@ -198,13 +316,25 @@ impl<'a> LCDCPDIS7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Reader of field `LCDCPCLKSYNC`"]
-pub type LCDCPCLKSYNC_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LCDCPCLKSYNC`"]
+#[doc = "Field `LCDCPCLKSYNC` reader - LCD charge pump clock synchronization"]
+pub struct LCDCPCLKSYNC_R(crate::FieldReader<bool, bool>);
+impl LCDCPCLKSYNC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LCDCPCLKSYNC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LCDCPCLKSYNC_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LCDCPCLKSYNC` writer - LCD charge pump clock synchronization"]
 pub struct LCDCPCLKSYNC_W<'a> {
     w: &'a mut W,
 }
@@ -222,7 +352,7 @@ impl<'a> LCDCPCLKSYNC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u16) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u16 & 0x01) << 15);
         self.w
     }
 }
@@ -318,5 +448,30 @@ impl W {
     #[inline(always)]
     pub fn lcdcpclksync(&mut self) -> LCDCPCLKSYNC_W {
         LCDCPCLKSYNC_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "LCD_C Charge Pump Control Register 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lcdccpctl](index.html) module"]
+pub struct LCDCCPCTL_SPEC;
+impl crate::RegisterSpec for LCDCCPCTL_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [lcdccpctl::R](R) reader structure"]
+impl crate::Readable for LCDCCPCTL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [lcdccpctl::W](W) writer structure"]
+impl crate::Writable for LCDCCPCTL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets LCDCCPCTL to value 0"]
+impl crate::Resettable for LCDCCPCTL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

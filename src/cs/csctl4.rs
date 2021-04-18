@@ -1,18 +1,52 @@
-#[doc = "Reader of register CSCTL4"]
-pub type R = crate::R<u16, super::CSCTL4>;
-#[doc = "Writer for register CSCTL4"]
-pub type W = crate::W<u16, super::CSCTL4>;
-#[doc = "Register CSCTL4 `reset()`'s with value 0"]
-impl crate::ResetValue for super::CSCTL4 {
-    type Type = u16;
+#[doc = "Register `CSCTL4` reader"]
+pub struct R(crate::R<CSCTL4_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CSCTL4_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `LFXTOFF`"]
-pub type LFXTOFF_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LFXTOFF`"]
+impl core::convert::From<crate::R<CSCTL4_SPEC>> for R {
+    fn from(reader: crate::R<CSCTL4_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CSCTL4` writer"]
+pub struct W(crate::W<CSCTL4_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CSCTL4_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<CSCTL4_SPEC>> for W {
+    fn from(writer: crate::W<CSCTL4_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `LFXTOFF` reader - Low Frequency Oscillator (LFXT) disable"]
+pub struct LFXTOFF_R(crate::FieldReader<bool, bool>);
+impl LFXTOFF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LFXTOFF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LFXTOFF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LFXTOFF` writer - Low Frequency Oscillator (LFXT) disable"]
 pub struct LFXTOFF_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> LFXTOFF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `SMCLKOFF`"]
-pub type SMCLKOFF_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SMCLKOFF`"]
+#[doc = "Field `SMCLKOFF` reader - SMCLK Off"]
+pub struct SMCLKOFF_R(crate::FieldReader<bool, bool>);
+impl SMCLKOFF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SMCLKOFF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SMCLKOFF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SMCLKOFF` writer - SMCLK Off"]
 pub struct SMCLKOFF_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +100,25 @@ impl<'a> SMCLKOFF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `VLOOFF`"]
-pub type VLOOFF_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `VLOOFF`"]
+#[doc = "Field `VLOOFF` reader - VLO Off"]
+pub struct VLOOFF_R(crate::FieldReader<bool, bool>);
+impl VLOOFF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VLOOFF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for VLOOFF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VLOOFF` writer - VLO Off"]
 pub struct VLOOFF_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +136,25 @@ impl<'a> VLOOFF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `LFXTBYPASS`"]
-pub type LFXTBYPASS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LFXTBYPASS`"]
+#[doc = "Field `LFXTBYPASS` reader - LFXT bypass mode : 0: internal 1:sourced from external pin"]
+pub struct LFXTBYPASS_R(crate::FieldReader<bool, bool>);
+impl LFXTBYPASS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LFXTBYPASS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LFXTBYPASS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LFXTBYPASS` writer - LFXT bypass mode : 0: internal 1:sourced from external pin"]
 pub struct LFXTBYPASS_W<'a> {
     w: &'a mut W,
 }
@@ -102,7 +172,7 @@ impl<'a> LFXTBYPASS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u16 & 0x01) << 4);
         self.w
     }
 }
@@ -125,9 +195,12 @@ impl From<LFXTDRIVE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `LFXTDRIVE`"]
-pub type LFXTDRIVE_R = crate::R<u8, LFXTDRIVE_A>;
+#[doc = "Field `LFXTDRIVE` reader - LFXT Drive Level mode Bit 0"]
+pub struct LFXTDRIVE_R(crate::FieldReader<u8, LFXTDRIVE_A>);
 impl LFXTDRIVE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LFXTDRIVE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LFXTDRIVE_A {
@@ -142,25 +215,32 @@ impl LFXTDRIVE_R {
     #[doc = "Checks if the value of the field is `LFXTDRIVE_0`"]
     #[inline(always)]
     pub fn is_lfxtdrive_0(&self) -> bool {
-        *self == LFXTDRIVE_A::LFXTDRIVE_0
+        **self == LFXTDRIVE_A::LFXTDRIVE_0
     }
     #[doc = "Checks if the value of the field is `LFXTDRIVE_1`"]
     #[inline(always)]
     pub fn is_lfxtdrive_1(&self) -> bool {
-        *self == LFXTDRIVE_A::LFXTDRIVE_1
+        **self == LFXTDRIVE_A::LFXTDRIVE_1
     }
     #[doc = "Checks if the value of the field is `LFXTDRIVE_2`"]
     #[inline(always)]
     pub fn is_lfxtdrive_2(&self) -> bool {
-        *self == LFXTDRIVE_A::LFXTDRIVE_2
+        **self == LFXTDRIVE_A::LFXTDRIVE_2
     }
     #[doc = "Checks if the value of the field is `LFXTDRIVE_3`"]
     #[inline(always)]
     pub fn is_lfxtdrive_3(&self) -> bool {
-        *self == LFXTDRIVE_A::LFXTDRIVE_3
+        **self == LFXTDRIVE_A::LFXTDRIVE_3
     }
 }
-#[doc = "Write proxy for field `LFXTDRIVE`"]
+impl core::ops::Deref for LFXTDRIVE_R {
+    type Target = crate::FieldReader<u8, LFXTDRIVE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LFXTDRIVE` writer - LFXT Drive Level mode Bit 0"]
 pub struct LFXTDRIVE_W<'a> {
     w: &'a mut W,
 }
@@ -168,9 +248,7 @@ impl<'a> LFXTDRIVE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LFXTDRIVE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "LFXT Drive Level mode: 0"]
     #[inline(always)]
@@ -195,13 +273,25 @@ impl<'a> LFXTDRIVE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u16) & 0x03) << 6);
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u16 & 0x03) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `HFXTOFF`"]
-pub type HFXTOFF_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `HFXTOFF`"]
+#[doc = "Field `HFXTOFF` reader - High Frequency Oscillator disable"]
+pub struct HFXTOFF_R(crate::FieldReader<bool, bool>);
+impl HFXTOFF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HFXTOFF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for HFXTOFF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HFXTOFF` writer - High Frequency Oscillator disable"]
 pub struct HFXTOFF_W<'a> {
     w: &'a mut W,
 }
@@ -219,7 +309,7 @@ impl<'a> HFXTOFF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u16) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u16 & 0x01) << 8);
         self.w
     }
 }
@@ -242,9 +332,12 @@ impl From<HFFREQ_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `HFFREQ`"]
-pub type HFFREQ_R = crate::R<u8, HFFREQ_A>;
+#[doc = "Field `HFFREQ` reader - HFXT frequency selection Bit 1"]
+pub struct HFFREQ_R(crate::FieldReader<u8, HFFREQ_A>);
 impl HFFREQ_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        HFFREQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HFFREQ_A {
@@ -259,25 +352,32 @@ impl HFFREQ_R {
     #[doc = "Checks if the value of the field is `HFFREQ_0`"]
     #[inline(always)]
     pub fn is_hffreq_0(&self) -> bool {
-        *self == HFFREQ_A::HFFREQ_0
+        **self == HFFREQ_A::HFFREQ_0
     }
     #[doc = "Checks if the value of the field is `HFFREQ_1`"]
     #[inline(always)]
     pub fn is_hffreq_1(&self) -> bool {
-        *self == HFFREQ_A::HFFREQ_1
+        **self == HFFREQ_A::HFFREQ_1
     }
     #[doc = "Checks if the value of the field is `HFFREQ_2`"]
     #[inline(always)]
     pub fn is_hffreq_2(&self) -> bool {
-        *self == HFFREQ_A::HFFREQ_2
+        **self == HFFREQ_A::HFFREQ_2
     }
     #[doc = "Checks if the value of the field is `HFFREQ_3`"]
     #[inline(always)]
     pub fn is_hffreq_3(&self) -> bool {
-        *self == HFFREQ_A::HFFREQ_3
+        **self == HFFREQ_A::HFFREQ_3
     }
 }
-#[doc = "Write proxy for field `HFFREQ`"]
+impl core::ops::Deref for HFFREQ_R {
+    type Target = crate::FieldReader<u8, HFFREQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HFFREQ` writer - HFXT frequency selection Bit 1"]
 pub struct HFFREQ_W<'a> {
     w: &'a mut W,
 }
@@ -285,9 +385,7 @@ impl<'a> HFFREQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: HFFREQ_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "HFXT frequency selection: 0"]
     #[inline(always)]
@@ -312,13 +410,25 @@ impl<'a> HFFREQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u16) & 0x03) << 10);
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u16 & 0x03) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `HFXTBYPASS`"]
-pub type HFXTBYPASS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `HFXTBYPASS`"]
+#[doc = "Field `HFXTBYPASS` reader - HFXT bypass mode : 0: internal 1:sourced from external pin"]
+pub struct HFXTBYPASS_R(crate::FieldReader<bool, bool>);
+impl HFXTBYPASS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HFXTBYPASS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for HFXTBYPASS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HFXTBYPASS` writer - HFXT bypass mode : 0: internal 1:sourced from external pin"]
 pub struct HFXTBYPASS_W<'a> {
     w: &'a mut W,
 }
@@ -336,7 +446,7 @@ impl<'a> HFXTBYPASS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u16) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u16 & 0x01) << 12);
         self.w
     }
 }
@@ -359,9 +469,12 @@ impl From<HFXTDRIVE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `HFXTDRIVE`"]
-pub type HFXTDRIVE_R = crate::R<u8, HFXTDRIVE_A>;
+#[doc = "Field `HFXTDRIVE` reader - HFXT Drive Level mode Bit 0"]
+pub struct HFXTDRIVE_R(crate::FieldReader<u8, HFXTDRIVE_A>);
 impl HFXTDRIVE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        HFXTDRIVE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HFXTDRIVE_A {
@@ -376,25 +489,32 @@ impl HFXTDRIVE_R {
     #[doc = "Checks if the value of the field is `HFXTDRIVE_0`"]
     #[inline(always)]
     pub fn is_hfxtdrive_0(&self) -> bool {
-        *self == HFXTDRIVE_A::HFXTDRIVE_0
+        **self == HFXTDRIVE_A::HFXTDRIVE_0
     }
     #[doc = "Checks if the value of the field is `HFXTDRIVE_1`"]
     #[inline(always)]
     pub fn is_hfxtdrive_1(&self) -> bool {
-        *self == HFXTDRIVE_A::HFXTDRIVE_1
+        **self == HFXTDRIVE_A::HFXTDRIVE_1
     }
     #[doc = "Checks if the value of the field is `HFXTDRIVE_2`"]
     #[inline(always)]
     pub fn is_hfxtdrive_2(&self) -> bool {
-        *self == HFXTDRIVE_A::HFXTDRIVE_2
+        **self == HFXTDRIVE_A::HFXTDRIVE_2
     }
     #[doc = "Checks if the value of the field is `HFXTDRIVE_3`"]
     #[inline(always)]
     pub fn is_hfxtdrive_3(&self) -> bool {
-        *self == HFXTDRIVE_A::HFXTDRIVE_3
+        **self == HFXTDRIVE_A::HFXTDRIVE_3
     }
 }
-#[doc = "Write proxy for field `HFXTDRIVE`"]
+impl core::ops::Deref for HFXTDRIVE_R {
+    type Target = crate::FieldReader<u8, HFXTDRIVE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HFXTDRIVE` writer - HFXT Drive Level mode Bit 0"]
 pub struct HFXTDRIVE_W<'a> {
     w: &'a mut W,
 }
@@ -402,9 +522,7 @@ impl<'a> HFXTDRIVE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: HFXTDRIVE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "HFXT Drive Level mode: 0"]
     #[inline(always)]
@@ -429,7 +547,7 @@ impl<'a> HFXTDRIVE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u16) & 0x03) << 14);
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | ((value as u16 & 0x03) << 14);
         self.w
     }
 }
@@ -525,5 +643,30 @@ impl W {
     #[inline(always)]
     pub fn hfxtdrive(&mut self) -> HFXTDRIVE_W {
         HFXTDRIVE_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "CS Control Register 4\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl4](index.html) module"]
+pub struct CSCTL4_SPEC;
+impl crate::RegisterSpec for CSCTL4_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [csctl4::R](R) reader structure"]
+impl crate::Readable for CSCTL4_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [csctl4::W](W) writer structure"]
+impl crate::Writable for CSCTL4_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CSCTL4 to value 0"]
+impl crate::Resettable for CSCTL4_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

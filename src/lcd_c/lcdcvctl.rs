@@ -1,18 +1,52 @@
-#[doc = "Reader of register LCDCVCTL"]
-pub type R = crate::R<u16, super::LCDCVCTL>;
-#[doc = "Writer for register LCDCVCTL"]
-pub type W = crate::W<u16, super::LCDCVCTL>;
-#[doc = "Register LCDCVCTL `reset()`'s with value 0"]
-impl crate::ResetValue for super::LCDCVCTL {
-    type Type = u16;
+#[doc = "Register `LCDCVCTL` reader"]
+pub struct R(crate::R<LCDCVCTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<LCDCVCTL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `LCD2B`"]
-pub type LCD2B_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LCD2B`"]
+impl core::convert::From<crate::R<LCDCVCTL_SPEC>> for R {
+    fn from(reader: crate::R<LCDCVCTL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `LCDCVCTL` writer"]
+pub struct W(crate::W<LCDCVCTL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<LCDCVCTL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<LCDCVCTL_SPEC>> for W {
+    fn from(writer: crate::W<LCDCVCTL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `LCD2B` reader - Selects 1/2 bias."]
+pub struct LCD2B_R(crate::FieldReader<bool, bool>);
+impl LCD2B_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LCD2B_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LCD2B_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LCD2B` writer - Selects 1/2 bias."]
 pub struct LCD2B_W<'a> {
     w: &'a mut W,
 }
@@ -30,7 +64,7 @@ impl<'a> LCD2B_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
         self.w
     }
 }
@@ -53,9 +87,12 @@ impl From<VLCDREF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `VLCDREF`"]
-pub type VLCDREF_R = crate::R<u8, VLCDREF_A>;
+#[doc = "Field `VLCDREF` reader - Selects reference voltage for regulated charge pump: 0"]
+pub struct VLCDREF_R(crate::FieldReader<u8, VLCDREF_A>);
 impl VLCDREF_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        VLCDREF_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VLCDREF_A {
@@ -70,25 +107,32 @@ impl VLCDREF_R {
     #[doc = "Checks if the value of the field is `VLCDREF_0`"]
     #[inline(always)]
     pub fn is_vlcdref_0(&self) -> bool {
-        *self == VLCDREF_A::VLCDREF_0
+        **self == VLCDREF_A::VLCDREF_0
     }
     #[doc = "Checks if the value of the field is `VLCDREF_1`"]
     #[inline(always)]
     pub fn is_vlcdref_1(&self) -> bool {
-        *self == VLCDREF_A::VLCDREF_1
+        **self == VLCDREF_A::VLCDREF_1
     }
     #[doc = "Checks if the value of the field is `VLCDREF_2`"]
     #[inline(always)]
     pub fn is_vlcdref_2(&self) -> bool {
-        *self == VLCDREF_A::VLCDREF_2
+        **self == VLCDREF_A::VLCDREF_2
     }
     #[doc = "Checks if the value of the field is `VLCDREF_3`"]
     #[inline(always)]
     pub fn is_vlcdref_3(&self) -> bool {
-        *self == VLCDREF_A::VLCDREF_3
+        **self == VLCDREF_A::VLCDREF_3
     }
 }
-#[doc = "Write proxy for field `VLCDREF`"]
+impl core::ops::Deref for VLCDREF_R {
+    type Target = crate::FieldReader<u8, VLCDREF_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VLCDREF` writer - Selects reference voltage for regulated charge pump: 0"]
 pub struct VLCDREF_W<'a> {
     w: &'a mut W,
 }
@@ -96,9 +140,7 @@ impl<'a> VLCDREF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VLCDREF_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Internal"]
     #[inline(always)]
@@ -123,13 +165,25 @@ impl<'a> VLCDREF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 1)) | (((value as u16) & 0x03) << 1);
+        self.w.bits = (self.w.bits & !(0x03 << 1)) | ((value as u16 & 0x03) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `LCDCPEN`"]
-pub type LCDCPEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LCDCPEN`"]
+#[doc = "Field `LCDCPEN` reader - LCD Voltage Charge Pump Enable."]
+pub struct LCDCPEN_R(crate::FieldReader<bool, bool>);
+impl LCDCPEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LCDCPEN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LCDCPEN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LCDCPEN` writer - LCD Voltage Charge Pump Enable."]
 pub struct LCDCPEN_W<'a> {
     w: &'a mut W,
 }
@@ -147,13 +201,25 @@ impl<'a> LCDCPEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `VLCDEXT`"]
-pub type VLCDEXT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `VLCDEXT`"]
+#[doc = "Field `VLCDEXT` reader - Select external source for VLCD."]
+pub struct VLCDEXT_R(crate::FieldReader<bool, bool>);
+impl VLCDEXT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VLCDEXT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for VLCDEXT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VLCDEXT` writer - Select external source for VLCD."]
 pub struct VLCDEXT_W<'a> {
     w: &'a mut W,
 }
@@ -171,13 +237,25 @@ impl<'a> VLCDEXT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u16 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `LCDEXTBIAS`"]
-pub type LCDEXTBIAS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LCDEXTBIAS`"]
+#[doc = "Field `LCDEXTBIAS` reader - V2 - V4 voltage select."]
+pub struct LCDEXTBIAS_R(crate::FieldReader<bool, bool>);
+impl LCDEXTBIAS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LCDEXTBIAS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LCDEXTBIAS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LCDEXTBIAS` writer - V2 - V4 voltage select."]
 pub struct LCDEXTBIAS_W<'a> {
     w: &'a mut W,
 }
@@ -195,13 +273,25 @@ impl<'a> LCDEXTBIAS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u16 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `R03EXT`"]
-pub type R03EXT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `R03EXT`"]
+#[doc = "Field `R03EXT` reader - Selects external connections for LCD mid voltages."]
+pub struct R03EXT_R(crate::FieldReader<bool, bool>);
+impl R03EXT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        R03EXT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for R03EXT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `R03EXT` writer - Selects external connections for LCD mid voltages."]
 pub struct R03EXT_W<'a> {
     w: &'a mut W,
 }
@@ -219,13 +309,25 @@ impl<'a> R03EXT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u16 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `LCDREXT`"]
-pub type LCDREXT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LCDREXT`"]
+#[doc = "Field `LCDREXT` reader - Selects external connection for lowest LCD voltage."]
+pub struct LCDREXT_R(crate::FieldReader<bool, bool>);
+impl LCDREXT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LCDREXT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LCDREXT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LCDREXT` writer - Selects external connection for lowest LCD voltage."]
 pub struct LCDREXT_W<'a> {
     w: &'a mut W,
 }
@@ -243,7 +345,7 @@ impl<'a> LCDREXT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
         self.w
     }
 }
@@ -290,115 +392,124 @@ impl From<VLCD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `VLCD`"]
-pub type VLCD_R = crate::R<u8, VLCD_A>;
+#[doc = "Field `VLCD` reader - VLCD select: 0"]
+pub struct VLCD_R(crate::FieldReader<u8, VLCD_A>);
 impl VLCD_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        VLCD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, VLCD_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<VLCD_A> {
         match self.bits {
-            0 => Val(VLCD_A::VLCD_0),
-            1 => Val(VLCD_A::VLCD_1),
-            2 => Val(VLCD_A::VLCD_2),
-            3 => Val(VLCD_A::VLCD_3),
-            4 => Val(VLCD_A::VLCD_4),
-            5 => Val(VLCD_A::VLCD_5),
-            6 => Val(VLCD_A::VLCD_6),
-            7 => Val(VLCD_A::VLCD_7),
-            8 => Val(VLCD_A::VLCD_8),
-            9 => Val(VLCD_A::VLCD_9),
-            10 => Val(VLCD_A::VLCD_10),
-            11 => Val(VLCD_A::VLCD_11),
-            12 => Val(VLCD_A::VLCD_12),
-            13 => Val(VLCD_A::VLCD_13),
-            14 => Val(VLCD_A::VLCD_14),
-            15 => Val(VLCD_A::VLCD_15),
-            i => Res(i),
+            0 => Some(VLCD_A::VLCD_0),
+            1 => Some(VLCD_A::VLCD_1),
+            2 => Some(VLCD_A::VLCD_2),
+            3 => Some(VLCD_A::VLCD_3),
+            4 => Some(VLCD_A::VLCD_4),
+            5 => Some(VLCD_A::VLCD_5),
+            6 => Some(VLCD_A::VLCD_6),
+            7 => Some(VLCD_A::VLCD_7),
+            8 => Some(VLCD_A::VLCD_8),
+            9 => Some(VLCD_A::VLCD_9),
+            10 => Some(VLCD_A::VLCD_10),
+            11 => Some(VLCD_A::VLCD_11),
+            12 => Some(VLCD_A::VLCD_12),
+            13 => Some(VLCD_A::VLCD_13),
+            14 => Some(VLCD_A::VLCD_14),
+            15 => Some(VLCD_A::VLCD_15),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VLCD_0`"]
     #[inline(always)]
     pub fn is_vlcd_0(&self) -> bool {
-        *self == VLCD_A::VLCD_0
+        **self == VLCD_A::VLCD_0
     }
     #[doc = "Checks if the value of the field is `VLCD_1`"]
     #[inline(always)]
     pub fn is_vlcd_1(&self) -> bool {
-        *self == VLCD_A::VLCD_1
+        **self == VLCD_A::VLCD_1
     }
     #[doc = "Checks if the value of the field is `VLCD_2`"]
     #[inline(always)]
     pub fn is_vlcd_2(&self) -> bool {
-        *self == VLCD_A::VLCD_2
+        **self == VLCD_A::VLCD_2
     }
     #[doc = "Checks if the value of the field is `VLCD_3`"]
     #[inline(always)]
     pub fn is_vlcd_3(&self) -> bool {
-        *self == VLCD_A::VLCD_3
+        **self == VLCD_A::VLCD_3
     }
     #[doc = "Checks if the value of the field is `VLCD_4`"]
     #[inline(always)]
     pub fn is_vlcd_4(&self) -> bool {
-        *self == VLCD_A::VLCD_4
+        **self == VLCD_A::VLCD_4
     }
     #[doc = "Checks if the value of the field is `VLCD_5`"]
     #[inline(always)]
     pub fn is_vlcd_5(&self) -> bool {
-        *self == VLCD_A::VLCD_5
+        **self == VLCD_A::VLCD_5
     }
     #[doc = "Checks if the value of the field is `VLCD_6`"]
     #[inline(always)]
     pub fn is_vlcd_6(&self) -> bool {
-        *self == VLCD_A::VLCD_6
+        **self == VLCD_A::VLCD_6
     }
     #[doc = "Checks if the value of the field is `VLCD_7`"]
     #[inline(always)]
     pub fn is_vlcd_7(&self) -> bool {
-        *self == VLCD_A::VLCD_7
+        **self == VLCD_A::VLCD_7
     }
     #[doc = "Checks if the value of the field is `VLCD_8`"]
     #[inline(always)]
     pub fn is_vlcd_8(&self) -> bool {
-        *self == VLCD_A::VLCD_8
+        **self == VLCD_A::VLCD_8
     }
     #[doc = "Checks if the value of the field is `VLCD_9`"]
     #[inline(always)]
     pub fn is_vlcd_9(&self) -> bool {
-        *self == VLCD_A::VLCD_9
+        **self == VLCD_A::VLCD_9
     }
     #[doc = "Checks if the value of the field is `VLCD_10`"]
     #[inline(always)]
     pub fn is_vlcd_10(&self) -> bool {
-        *self == VLCD_A::VLCD_10
+        **self == VLCD_A::VLCD_10
     }
     #[doc = "Checks if the value of the field is `VLCD_11`"]
     #[inline(always)]
     pub fn is_vlcd_11(&self) -> bool {
-        *self == VLCD_A::VLCD_11
+        **self == VLCD_A::VLCD_11
     }
     #[doc = "Checks if the value of the field is `VLCD_12`"]
     #[inline(always)]
     pub fn is_vlcd_12(&self) -> bool {
-        *self == VLCD_A::VLCD_12
+        **self == VLCD_A::VLCD_12
     }
     #[doc = "Checks if the value of the field is `VLCD_13`"]
     #[inline(always)]
     pub fn is_vlcd_13(&self) -> bool {
-        *self == VLCD_A::VLCD_13
+        **self == VLCD_A::VLCD_13
     }
     #[doc = "Checks if the value of the field is `VLCD_14`"]
     #[inline(always)]
     pub fn is_vlcd_14(&self) -> bool {
-        *self == VLCD_A::VLCD_14
+        **self == VLCD_A::VLCD_14
     }
     #[doc = "Checks if the value of the field is `VLCD_15`"]
     #[inline(always)]
     pub fn is_vlcd_15(&self) -> bool {
-        *self == VLCD_A::VLCD_15
+        **self == VLCD_A::VLCD_15
     }
 }
-#[doc = "Write proxy for field `VLCD`"]
+impl core::ops::Deref for VLCD_R {
+    type Target = crate::FieldReader<u8, VLCD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VLCD` writer - VLCD select: 0"]
 pub struct VLCD_W<'a> {
     w: &'a mut W,
 }
@@ -491,7 +602,7 @@ impl<'a> VLCD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 9)) | (((value as u16) & 0x3f) << 9);
+        self.w.bits = (self.w.bits & !(0x3f << 9)) | ((value as u16 & 0x3f) << 9);
         self.w
     }
 }
@@ -577,5 +688,30 @@ impl W {
     #[inline(always)]
     pub fn vlcd(&mut self) -> VLCD_W {
         VLCD_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "LCD_C Voltage Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lcdcvctl](index.html) module"]
+pub struct LCDCVCTL_SPEC;
+impl crate::RegisterSpec for LCDCVCTL_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [lcdcvctl::R](R) reader structure"]
+impl crate::Readable for LCDCVCTL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [lcdcvctl::W](W) writer structure"]
+impl crate::Writable for LCDCVCTL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets LCDCVCTL to value 0"]
+impl crate::Resettable for LCDCVCTL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

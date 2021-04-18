@@ -2,96 +2,47 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Port J Input"]
-    pub pjin: PJIN,
+    pub pjin: crate::Reg<pjin::PJIN_SPEC>,
     #[doc = "0x02 - Port J Output"]
-    pub pjout: PJOUT,
+    pub pjout: crate::Reg<pjout::PJOUT_SPEC>,
     #[doc = "0x04 - Port J Direction"]
-    pub pjdir: PJDIR,
+    pub pjdir: crate::Reg<pjdir::PJDIR_SPEC>,
     #[doc = "0x06 - Port J Resistor Enable"]
-    pub pjren: PJREN,
+    pub pjren: crate::Reg<pjren::PJREN_SPEC>,
     _reserved4: [u8; 2usize],
     #[doc = "0x0a - Port J Selection 0"]
-    pub pjsel0: PJSEL0,
+    pub pjsel0: crate::Reg<pjsel0::PJSEL0_SPEC>,
     #[doc = "0x0c - Port J Selection 1"]
-    pub pjsel1: PJSEL1,
+    pub pjsel1: crate::Reg<pjsel1::PJSEL1_SPEC>,
     _reserved6: [u8; 8usize],
     #[doc = "0x16 - Port J Complement Selection"]
-    pub pjselc: PJSELC,
+    pub pjselc: crate::Reg<pjselc::PJSELC_SPEC>,
 }
-#[doc = "Port J Input\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pjin](pjin) module"]
-pub type PJIN = crate::Reg<u16, _PJIN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PJIN;
-#[doc = "`read()` method returns [pjin::R](pjin::R) reader structure"]
-impl crate::Readable for PJIN {}
-#[doc = "`write(|w| ..)` method takes [pjin::W](pjin::W) writer structure"]
-impl crate::Writable for PJIN {}
+#[doc = "PJIN register accessor: an alias for `Reg<PJIN_SPEC>`"]
+pub type PJIN = crate::Reg<pjin::PJIN_SPEC>;
 #[doc = "Port J Input"]
 pub mod pjin;
-#[doc = "Port J Output\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pjout](pjout) module"]
-pub type PJOUT = crate::Reg<u16, _PJOUT>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PJOUT;
-#[doc = "`read()` method returns [pjout::R](pjout::R) reader structure"]
-impl crate::Readable for PJOUT {}
-#[doc = "`write(|w| ..)` method takes [pjout::W](pjout::W) writer structure"]
-impl crate::Writable for PJOUT {}
+#[doc = "PJOUT register accessor: an alias for `Reg<PJOUT_SPEC>`"]
+pub type PJOUT = crate::Reg<pjout::PJOUT_SPEC>;
 #[doc = "Port J Output"]
 pub mod pjout;
-#[doc = "Port J Direction\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pjdir](pjdir) module"]
-pub type PJDIR = crate::Reg<u16, _PJDIR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PJDIR;
-#[doc = "`read()` method returns [pjdir::R](pjdir::R) reader structure"]
-impl crate::Readable for PJDIR {}
-#[doc = "`write(|w| ..)` method takes [pjdir::W](pjdir::W) writer structure"]
-impl crate::Writable for PJDIR {}
+#[doc = "PJDIR register accessor: an alias for `Reg<PJDIR_SPEC>`"]
+pub type PJDIR = crate::Reg<pjdir::PJDIR_SPEC>;
 #[doc = "Port J Direction"]
 pub mod pjdir;
-#[doc = "Port J Resistor Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pjren](pjren) module"]
-pub type PJREN = crate::Reg<u16, _PJREN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PJREN;
-#[doc = "`read()` method returns [pjren::R](pjren::R) reader structure"]
-impl crate::Readable for PJREN {}
-#[doc = "`write(|w| ..)` method takes [pjren::W](pjren::W) writer structure"]
-impl crate::Writable for PJREN {}
+#[doc = "PJREN register accessor: an alias for `Reg<PJREN_SPEC>`"]
+pub type PJREN = crate::Reg<pjren::PJREN_SPEC>;
 #[doc = "Port J Resistor Enable"]
 pub mod pjren;
-#[doc = "Port J Selection 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pjsel0](pjsel0) module"]
-pub type PJSEL0 = crate::Reg<u16, _PJSEL0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PJSEL0;
-#[doc = "`read()` method returns [pjsel0::R](pjsel0::R) reader structure"]
-impl crate::Readable for PJSEL0 {}
-#[doc = "`write(|w| ..)` method takes [pjsel0::W](pjsel0::W) writer structure"]
-impl crate::Writable for PJSEL0 {}
+#[doc = "PJSEL0 register accessor: an alias for `Reg<PJSEL0_SPEC>`"]
+pub type PJSEL0 = crate::Reg<pjsel0::PJSEL0_SPEC>;
 #[doc = "Port J Selection 0"]
 pub mod pjsel0;
-#[doc = "Port J Selection 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pjsel1](pjsel1) module"]
-pub type PJSEL1 = crate::Reg<u16, _PJSEL1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PJSEL1;
-#[doc = "`read()` method returns [pjsel1::R](pjsel1::R) reader structure"]
-impl crate::Readable for PJSEL1 {}
-#[doc = "`write(|w| ..)` method takes [pjsel1::W](pjsel1::W) writer structure"]
-impl crate::Writable for PJSEL1 {}
+#[doc = "PJSEL1 register accessor: an alias for `Reg<PJSEL1_SPEC>`"]
+pub type PJSEL1 = crate::Reg<pjsel1::PJSEL1_SPEC>;
 #[doc = "Port J Selection 1"]
 pub mod pjsel1;
-#[doc = "Port J Complement Selection\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pjselc](pjselc) module"]
-pub type PJSELC = crate::Reg<u16, _PJSELC>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PJSELC;
-#[doc = "`read()` method returns [pjselc::R](pjselc::R) reader structure"]
-impl crate::Readable for PJSELC {}
-#[doc = "`write(|w| ..)` method takes [pjselc::W](pjselc::W) writer structure"]
-impl crate::Writable for PJSELC {}
+#[doc = "PJSELC register accessor: an alias for `Reg<PJSELC_SPEC>`"]
+pub type PJSELC = crate::Reg<pjselc::PJSELC_SPEC>;
 #[doc = "Port J Complement Selection"]
 pub mod pjselc;

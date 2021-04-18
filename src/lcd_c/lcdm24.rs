@@ -1,14 +1,61 @@
-#[doc = "Reader of register LCDM24"]
-pub type R = crate::R<u8, super::LCDM24>;
-#[doc = "Writer for register LCDM24"]
-pub type W = crate::W<u8, super::LCDM24>;
-#[doc = "Register LCDM24 `reset()`'s with value 0"]
-impl crate::ResetValue for super::LCDM24 {
-    type Type = u8;
+#[doc = "Register `LCDM24` reader"]
+pub struct R(crate::R<LCDM24_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<LCDM24_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<LCDM24_SPEC>> for R {
+    fn from(reader: crate::R<LCDM24_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `LCDM24` writer"]
+pub struct W(crate::W<LCDM24_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<LCDM24_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<LCDM24_SPEC>> for W {
+    fn from(writer: crate::W<LCDM24_SPEC>) -> Self {
+        W(writer)
+    }
+}
+impl W {
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "LCD Memory 24\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lcdm24](index.html) module"]
+pub struct LCDM24_SPEC;
+impl crate::RegisterSpec for LCDM24_SPEC {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [lcdm24::R](R) reader structure"]
+impl crate::Readable for LCDM24_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [lcdm24::W](W) writer structure"]
+impl crate::Writable for LCDM24_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets LCDM24 to value 0"]
+impl crate::Resettable for LCDM24_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
         0
     }
 }
-impl R {}
-impl W {}
