@@ -1,6 +1,6 @@
 [package]
 name = "msp430fr6972"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["chrismolli <molliere.c@gmail.com>"]
 edition = "2018"
 description = "PAC for MSP430FR6972"
@@ -15,7 +15,7 @@ exclude = [
 
 [dependencies]
 bare-metal = "0.2.0"
-msp430 = "0.2.4"
+msp430 = "0.2.2"
 vcell = "0.1.2"
 
 [dependencies.msp430-rt]
