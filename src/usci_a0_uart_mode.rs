@@ -28,7 +28,11 @@ pub struct RegisterBlock {
     pub uca0irtctl: crate::Reg<uca0irtctl::UCA0IRTCTL_SPEC>,
     #[doc = "0x13 - USCI A0 IrDA Receive Control"]
     pub uca0irrctl: crate::Reg<uca0irrctl::UCA0IRRCTL_SPEC>,
-    _reserved12: [u8; 10usize],
+    _reserved12: [u8; 6usize],
+    #[doc = "0x1a - USCI A0 Interrupt Enable Register"]
+    pub uca0ie: crate::Reg<uca0ie::UCA0IE_SPEC>,
+    #[doc = "0x1c - USCI A0 Interrupt Flag Register"]
+    pub uca0ifg: crate::Reg<uca0ifg::UCA0IFG_SPEC>,
     #[doc = "0x1e - USCI A0 Interrupt Vector Register"]
     pub uca0iv: crate::Reg<uca0iv::UCA0IV_SPEC>,
 }
@@ -80,6 +84,14 @@ pub mod uca0rxbuf;
 pub type UCA0TXBUF = crate::Reg<uca0txbuf::UCA0TXBUF_SPEC>;
 #[doc = "USCI A0 Transmit Buffer"]
 pub mod uca0txbuf;
+#[doc = "UCA0IE register accessor: an alias for `Reg<UCA0IE_SPEC>`"]
+pub type UCA0IE = crate::Reg<uca0ie::UCA0IE_SPEC>;
+#[doc = "USCI A0 Interrupt Enable Register"]
+pub mod uca0ie;
+#[doc = "UCA0IFG register accessor: an alias for `Reg<UCA0IFG_SPEC>`"]
+pub type UCA0IFG = crate::Reg<uca0ifg::UCA0IFG_SPEC>;
+#[doc = "USCI A0 Interrupt Flag Register"]
+pub mod uca0ifg;
 #[doc = "UCA0IV register accessor: an alias for `Reg<UCA0IV_SPEC>`"]
 pub type UCA0IV = crate::Reg<uca0iv::UCA0IV_SPEC>;
 #[doc = "USCI A0 Interrupt Vector Register"]

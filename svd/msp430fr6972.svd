@@ -6578,6 +6578,20 @@
           <resetMask>65535</resetMask>
         </register>
         <register>
+          <name>UCA0IE</name>
+          <description>USCI A0 Interrupt Enable Register</description>
+          <addressOffset>26</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+        </register>
+        <register>
+          <name>UCA0IFG</name>
+          <description>USCI A0 Interrupt Flag Register</description>
+          <addressOffset>28</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+        </register>
+        <register>
           <name>UCA0IV</name>
           <description>USCI A0 Interrupt Vector Register</description>
           <addressOffset>30</addressOffset>
@@ -7097,6 +7111,20 @@
           <name>UCA1TXBUF</name>
           <description>USCI A1 Transmit Buffer</description>
           <addressOffset>14</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+        </register>
+        <register>
+          <name>UCA1IE</name>
+          <description>USCI A1 Interrupt Enable Register</description>
+          <addressOffset>26</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+        </register>
+        <register>
+          <name>UCA1IFG</name>
+          <description>USCI A1 Interrupt Flag Register</description>
+          <addressOffset>28</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
         </register>
